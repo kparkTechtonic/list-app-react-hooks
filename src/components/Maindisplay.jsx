@@ -1,4 +1,4 @@
-import React, { memo, useContext } from 'react';
+import React, { useContext } from 'react';
 import Context from '../Context';
 // https://ant.design/components/list/
 
@@ -65,3 +65,20 @@ const Maindisplay = (match) => {
 };
 
 export default Maindisplay;
+
+
+
+// ReactDOM.render(
+//   <div>
+//     <h3 style={{ margin: '16px 0' }}>Large Size</h3>
+//     <List
+//       size="large"
+//       header={<div>Header</div>}
+//       footer={<div>Footer</div>}
+//       bordered
+//       dataSource={data}
+//       renderItem={item => <List.Item>{item}</List.Item>}
+//     />
+//   </div>,
+//   mountNode,
+// );
