@@ -1,0 +1,60 @@
+.buttonContainer{
+    min-width: 330px;
+    width:30vw;
+    height:55vh;
+    display:grid;
+    grid-template-columns: auto auto auto auto;
+    background-color:#d4d5d7;
+}
+
+.displayDiv{
+    width:30vw;
+    min-width: 330px;
+    height:15vh;
+    background-color: #202020;
+}
+
+.buttonContainer div{
+    font-size:2rem;
+    text-align:center;
+    cursor: pointer;
+    border: 0.01rem solid black;
+    z-index:10;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#button16{
+    grid-column:span 2;
+}
+
+#button0, #button1, #button2{
+    background-color:#c9cacc;
+}
+
+#button3, #button7, #button11, #button15, #button18{
+    background-color:#f88f0d;
+}
+
+
+
+.recentPress{
+    color:white;
+    font-size:2rem;
+    display:flex;
+    flex-direction:row;
+    justify-content: flex-end;
+    padding-top:5vh;
+    height:10vh;
+}
+
+.currentDisplay{
+    font-size:2rem;
+    color:white;
+    display:flex;
+    flex-direction:row;
+    justify-content: flex-end;
+    height:10vh;
+}

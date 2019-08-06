@@ -1,0 +1,8 @@
+.ant-checkbox-group{
+  display:flex;
+  flex-direction: column;
+}
+
+.ant-checkbox-group label{
+  padding:0.7rem;
+}

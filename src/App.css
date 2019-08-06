@@ -8,3 +8,4 @@
   margin: 16px 24px 16px 0;
   float: left;
 }
+.element::-webkit-scrollbar { width: 0 !important }

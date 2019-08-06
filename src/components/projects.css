@@ -1,0 +1,18 @@
+.projectContainer{
+  display:inline-block;
+
+}
+
+.ant-card-cover{
+  display:inline-block;
+  max-height: 230px;
+}
+
+.ant-card{
+  margin:10px;
+
+}
+.ant-card-bordered{
+  margin:0px;
+
+}

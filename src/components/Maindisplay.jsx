@@ -1,61 +1,87 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
+import { Checkbox, Typography } from 'antd';
 import Context from '../Context';
+import './Maindisplay.css';
 // https://ant.design/components/list/
 
 
 const Maindisplay = (match) => {
+  const [checkedList, setCheckedList] = useState([]);
+  const [indeterminate, setIndeterminate] = useState(false);
+  const [checkAll, setCheckAll] = useState(false);
   const { state } = useContext(Context);
   const { data } = state;
+  const { Title } = Typography;
   const id = (match.location.pathname.split('/:')[1]);
+
+  useEffect(() => {
+    setIndeterminate(false);
+    setCheckAll(false);
+  }, []);
+
+  useEffect(() => {
+    // console.log(data ? data[0].listArr : undefined);
+  });
 
   function search(nameKey, myArray) {
     if (!nameKey || !myArray) return undefined;
-    for (let i = 0; i < myArray.length; i++) {
+    for (let i = 0; i < myArray.length; i += 1) {
       if (myArray[i]._id === nameKey) {
         return myArray[i];
       }
     }
+    return undefined;
   }
   const singleList = search(id, data);
 
-  console.log(singleList)
 
-  function populateArr(singleList) {
-    if (!data){
-      return(<div>Loading...</div>) 
-    }
-    if (typeof singleList !== 'object' || !singleList) {
-      return undefined
-    }
-    if (singleList) {
-      return (
-        <ul>
-          {singleList.listArr.map((keys,i) => (<div key = {i+keys}>{keys.text}</div>))}
-        </ul>
-        )
-    }
+  const CheckboxGroup = Checkbox.Group;
+  const plainOptions = singleList ? singleList.listArr.map(item => item.text) : ['Loading...'];
+
+  function onChange(check) {
+    setCheckedList(check);
+    setIndeterminate(!!check.length && check.length < plainOptions.length);
+    setCheckAll(check.length === plainOptions.length);
   }
 
-  // const setListToPopulate = async () => {
-  //   const returnData = await getData();
-  //   setState(
-  //     returnData.map((element, i) => (
-  //       <div key={i + element.title}>
-  //         <div>{`list name: ${element.title}`}</div>
-  //         <div>
-  //           {`list made: ${new Date(element.time).getHours()}:${new Date(
-  //             element.time,
-  //           ).getMinutes()}:${new Date(element.time).getSeconds()}`}
-  //         </div>
-  //         <ul>
-  //           {element.listArr.map(e => (
-  //             <li key={e.text}>{e.text}</li>
-  //           ))}
-  //         </ul>
-  //       </div>
-  //     )),
-  //   );
-  // };
+  function onCheckAllChange(e) {
+    setCheckedList(e.target.checked ? plainOptions : []);
+    setIndeterminate(false);
+    setCheckAll(e.target.checked);
+  }
+
+
+  function populateArr(listObj) {
+    if (!data) {
+      return (<div>Loading...</div>);
+    }
+    if (typeof listObj !== 'object' || !listObj) {
+      return <div>Loading...</div>;
+    }
+    if (listObj) {
+      return (
+        <div>
+          <Title level={3}>{listObj.title}</Title>
+          <div style={{ borderBottom: '1px solid #E9E9E9' }}>
+            <Checkbox
+              indeterminate={indeterminate}
+              onChange={onCheckAllChange}
+              checked={checkAll}
+            >
+                Check all
+            </Checkbox>
+          </div>
+          <br />
+          <CheckboxGroup
+            options={plainOptions}
+            value={checkedList}
+            onChange={onChange}
+          />
+        </div>
+      );
+    }
+    return undefined;
+  }
 
   return (
     <div className="App">
@@ -65,20 +91,3 @@ const Maindisplay = (match) => {
 };
 
 export default Maindisplay;
-
-
-
-// ReactDOM.render(
-//   <div>
-//     <h3 style={{ margin: '16px 0' }}>Large Size</h3>
-//     <List
-//       size="large"
-//       header={<div>Header</div>}
-//       footer={<div>Footer</div>}
-//       bordered
-//       dataSource={data}
-//       renderItem={item => <List.Item>{item}</List.Item>}
-//     />
-//   </div>,
-//   mountNode,
-// );

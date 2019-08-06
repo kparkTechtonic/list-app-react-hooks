@@ -5,13 +5,16 @@
   "dependencies": {
     "antd": "^3.20.7",
     "axios": "^0.19.0",
+    "live-server": "^1.2.1",
+    "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "(cd library-phase-one-kparkTechtonic; npx live-server --port=4000 --no-browser&)&&(cd html-css-201-assignment-kparkTechtonic; npx live-server --port=4500 --no-browser&)&&(cd car-dealership-console-app-kparkTechtonic; npx live-server --port=5500 --no-browser&)&&(cd comment-board-hackathon-kparkTechtonic; npx live-server --port=7000 --no-browser&)&&(react-scripts start)&",
+    "server-start":"(cd comment-board-hackathon-kparkTechtonic/cb-backend; npm start)",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

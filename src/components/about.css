@@ -1,0 +1,21 @@
+.ant-layout ant-layout-has-sider{
+  position: sticky;
+  top: 0;
+  height: 300vh;
+}
+
+.mainContent{
+  height: 300vh;
+  position: sticky;
+  top: 0;
+}
+
+.infscroll{
+  position: -webkit-sticky;
+  padding: 5px;
+  height: 100vh;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
