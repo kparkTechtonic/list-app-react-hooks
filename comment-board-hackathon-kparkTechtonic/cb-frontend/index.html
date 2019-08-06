@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Not Slack</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="thread-container">
+    <div class="fakecard"></div>
+    <div class="fakecard"></div>
+    <div class="card">general</div>
+    <div class="card">cars</div>
+    <div class="card">horses</div>
+    <div class="card">elephants</div>
+  </div>
+  <div class="nav-container">
+    <div class="logo">
+      <!-- <h1>Logo</h1> -->
+    </div>
+    <div class = "username">
+      <h1 id="userID">Chat name</h1>
+      <form>
+        <input type="text" value="Chat name" id="userIDInput"> 
+        <button id="userIDButton">set name</button>
+      </form>
+    </div>
+    <div>
+      <ul>
+      <!-- <li>sign up</li>
+      <li>login</li> -->
+    </ul>
+  </div>
+  </div>
+  <div class="main-container">
+    <div id="main-text"></div>
+    <div id="input">
+      <form>
+        <input type="text">
+        <button id="text-input">send</button>
+      </form>
+    </div>
+  </div>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+  <script src="./js/index.js"></script>
+</body>
+
+</html>

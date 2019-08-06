@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://127.0.0.1:5500/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>IndexedDB Assignment - DexieJS</title>
+    <link rel="stylesheet" href="./IndexedDB Assignment - DexieJS_files/bootstrap.min.css">
+    <link rel="stylesheet" href="./IndexedDB Assignment - DexieJS_files/style.css">
+    
+  </head>
+  <body>
+    <h1>IndexedDB Assignment</h1>
+      <table class="table table-striped">
+          <thead class="thead-dark">
+              <tr>
+                  <th>Cover</th>
+                  <th>Title</th>
+                  <th>Author</th>
+                  <th>Pages</th>
+                  <th>Synopsis</th>
+                  <th>Publish Date</th>
+                  <th>Rating</th>
+                  <th>Delete</th>
+              </tr>
+          </thead>
+          <tbody>
+          <tr id="A Song of Ice and Fire"><td></td><td>A Song of Ice and Fire</td><td>George R. R. Martin</td><td>694</td><td>Author sets out to create the world's most complicated family tree.</td><td>1997-03-17</td><td>3</td><button id="id4">delete book</button></tr><tr id="Cujo"><td></td><td>Cujo</td><td>Stephen King</td><td>500</td><td>Basically Beethoven but with more rabies.</td><td>1989-03-17</td><td>5</td><button id="id3">delete book</button></tr><tr id="IT"><td></td><td>IT</td><td>Stephen King</td><td>320</td><td>Clown makes red balloon animals and eats the customers.</td><td>1995-03-17</td><td>4</td><button id="id2">delete book</button></tr><tr id="Harry Potter and the Chamber of Secrets"><td></td><td>Harry Potter and the Chamber of Secrets</td><td>JK Rowling</td><td>300</td><td>Delusional boy dreams up a fake reality WITH SNAKES while trapped under a cupboard.</td><td>2002-03-17</td><td>2</td><button id="id1">delete book</button></tr><tr id="Harry Potter and the Sorcerer&#39;s Stone"><td></td><td>Harry Potter and the Sorcerer's Stone</td><td>JK Rowling</td><td>250</td><td>Delusional boy dreams up a fake reality while trapped under a cupboard.</td><td>2001-03-17</td><td>5</td><button id="id0">delete book</button></tr></tbody>
+      </table>
+      <hr>
+      <form>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">Title</label>
+                <input minlength="1" type="text" class="form-control" id="inputTitle" placeholder="Title">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="Author">Author</label>
+                <input type="text" class="form-control" id="inputAuthor" placeholder="Author">
+              </div>
+            </div>
+            <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputPages">Number Of Pages</label>
+              <input type="number" class="form-control" id="inputPages" placeholder="300">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputCover">Cover</label>
+              <input type="file" class="form-control" id="inputCover">
+            </div>
+          </div>
+            <div class="form-group">
+              <label for="inputSynopsis">Synopsis</label>
+              <input type="text" class="form-control" id="inputSynopsis" placeholder="Synopsis">
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputRating">Rating</label>
+                <input type="number" class="form-control" id="inputRating" placeholder="5">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputDate">Publish Date</label>
+                <input type="date" id="inputDate" class="form-control">
+              </div>
+            </div>
+            <button class="btn btn-primary" type="submit" onclick="addBook(event)">Submit</button>
+          </form>
+      <script defer="" src="./IndexedDB Assignment - DexieJS_files/dexie.js"></script>
+      <script defer="" src="./IndexedDB Assignment - DexieJS_files/indexedDB.js"></script>
+      <script defer="" src="./IndexedDB Assignment - DexieJS_files/app.js"></script>
+      <script defer="" src="./IndexedDB Assignment - DexieJS_files/populate-table.js"></script>
+  <!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</body></html>

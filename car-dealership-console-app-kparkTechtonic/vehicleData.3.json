@@ -1,0 +1,495 @@
+[{
+    "type": "car1",
+    "vin": "123456789",
+    "make": "Test bad type",
+    "model": "TL",
+    "color": "Turquoise",
+    "year": 2000,
+    "wheels": 0,
+    "mileage": 77622,
+    "price": 73791.16,
+    "description": 0,
+    "costToDealership": 0,
+    "clean": false,
+    "maintenanceAndInsurance": {
+      "lastServiced": "2018-04-04T08:43:30Z",
+      "lastInsured": "2018-06-07T12:35:52Z"
+    },
+    "fuel": 15
+  },
+  {
+    "type": "car",
+    "vin": null,
+    "make": "Test bad Vin null",
+    "model": "TL",
+    "color": "Turquoise",
+    "year": 2000,
+    "wheels": 0,
+    "mileage": 77622,
+    "price": 73791.16,
+    "description": 0,
+    "costToDealership": 0,
+    "clean": false,
+    "maintenanceAndInsurance": {
+      "lastServiced": "2018-04-04T08:43:30Z",
+      "lastInsured": "2018-06-07T12:35:52Z"
+    },
+    "fuel": 15
+  },
+  {
+    "type": "car",
+    "vin": "1234",
+    "make": "Test bad Vin short",
+    "model": "TL",
+    "color": "Turquoise",
+    "year": 2000,
+    "wheels": 0,
+    "mileage": 77622,
+    "price": 73791.16,
+    "description": 0,
+    "costToDealership": 0,
+    "clean": false,
+    "maintenanceAndInsurance": {
+      "lastServiced": "2018-04-04T08:43:30Z",
+      "lastInsured": "2018-06-07T12:35:52Z"
+    },
+    "fuel": 15
+  },
+  {
+    "type": "car",
+    "vin": "123456789012345678901234567890",
+    "make": "Test bad Vin Long",
+    "model": "TL",
+    "color": "Turquoise",
+    "year": 2000,
+    "wheels": 0,
+    "mileage": 77622,
+    "price": 73791.16,
+    "description": 0,
+    "costToDealership": 0,
+    "clean": false,
+    "maintenanceAndInsurance": {
+      "lastServiced": "2018-04-04T08:43:30Z",
+      "lastInsured": "2018-06-07T12:35:52Z"
+    },
+    "fuel": 15
+  },
+  {
+    "type": "car",
+    "vin": "1234567890",
+    "make": null,
+    "model": "Test bad make null",
+    "color": "Turquoise",
+    "year": 2000,
+    "wheels": 0,
+    "mileage": 77622,
+    "price": 73791.16,
+    "description": 0,
+    "costToDealership": 0,
+    "clean": false,
+    "maintenanceAndInsurance": {
+      "lastServiced": "2018-04-04T08:43:30Z",
+      "lastInsured": "2018-06-07T12:35:52Z"
+    },
+    "fuel": 15
+  },
+  {
+    "type": "car",
+    "vin": "1234567890",
+    "make": 15,
+    "model": "Test bad make number",
+    "color": "Turquoise",
+    "year": 2000,
+    "wheels": 0,
+    "mileage": 77622,
+    "price": 73791.16,
+    "description": 0,
+    "costToDealership": 0,
+    "clean": false,
+    "maintenanceAndInsurance": {
+      "lastServiced": "2018-04-04T08:43:30Z",
+      "lastInsured": "2018-06-07T12:35:52Z"
+    },
+    "fuel": 15
+  },
+  {
+    "type": "car",
+    "vin": "1234567890",
+    "make": true,
+    "model": "Test bad make boolean",
+    "color": "Turquoise",
+    "year": 2000,
+    "wheels": 0,
+    "mileage": 77622,
+    "price": 73791.16,
+    "description": 0,
+    "costToDealership": 0,
+    "clean": false,
+    "maintenanceAndInsurance": {
+      "lastServiced": "2018-04-04T08:43:30Z",
+      "lastInsured": "2018-06-07T12:35:52Z"
+    },
+    "fuel": 15
+  },
+  {
+    "type": "car",
+    "vin": "1234567890",
+    "make": "Test bad model null",
+    "model": null,
+    "color": "Turquoise",
+    "year": 2000,
+    "wheels": 0,
+    "mileage": 77622,
+    "price": 73791.16,
+    "description": 0,
+    "costToDealership": 0,
+    "clean": false,
+    "maintenanceAndInsurance": {
+      "lastServiced": "2018-04-04T08:43:30Z",
+      "lastInsured": "2018-06-07T12:35:52Z"
+    },
+    "fuel": 15
+  },
+  {
+    "type": "car",
+    "vin": "1234567890",
+    "make": "Test bad model number",
+    "model": 15,
+    "color": "Turquoise",
+    "year": 2000,
+    "wheels": 0,
+    "mileage": 77622,
+    "price": 73791.16,
+    "description": 0,
+    "costToDealership": 0,
+    "clean": false,
+    "maintenanceAndInsurance": {
+      "lastServiced": "2018-04-04T08:43:30Z",
+      "lastInsured": "2018-06-07T12:35:52Z"
+    },
+    "fuel": 15
+  },
+  {
+    "type": "car",
+    "vin": "1234567890",
+    "make": "Test bad model boolean",
+    "model": true,
+    "color": "Turquoise",
+    "year": 2000,
+    "wheels": 0,
+    "mileage": 77622,
+    "price": 73791.16,
+    "description": 0,
+    "costToDealership": 0,
+    "clean": false,
+    "maintenanceAndInsurance": {
+      "lastServiced": "2018-04-04T08:43:30Z",
+      "lastInsured": "2018-06-07T12:35:52Z"
+    },
+    "fuel": 15
+  },
+  {
+    "type": "car",
+    "vin": "1234567890",
+    "make": "Make",
+    "model": "Test bad color null",
+    "color": null,
+    "year": 2000,
+    "wheels": 0,
+    "mileage": 77622,
+    "price": 73791.16,
+    "description": 0,
+    "costToDealership": 0,
+    "clean": false,
+    "maintenanceAndInsurance": {
+      "lastServiced": "2018-04-04T08:43:30Z",
+      "lastInsured": "2018-06-07T12:35:52Z"
+    },
+    "fuel": 15
+  },
+  {
+    "type": "car",
+    "vin": "1234567890",
+    "make": "Make",
+    "model": "Test bad color number",
+    "color": 15,
+    "year": 2000,
+    "wheels": 0,
+    "mileage": 77622,
+    "price": 73791.16,
+    "description": 0,
+    "costToDealership": 0,
+    "clean": false,
+    "maintenanceAndInsurance": {
+      "lastServiced": "2018-04-04T08:43:30Z",
+      "lastInsured": "2018-06-07T12:35:52Z"
+    },
+    "fuel": 15
+  },
+  {
+    "type": "car",
+    "vin": "1234567890",
+    "make": "Make",
+    "model": "Test bad color boolean",
+    "color": true,
+    "year": 2000,
+    "wheels": 0,
+    "mileage": 77622,
+    "price": 73791.16,
+    "description": 0,
+    "costToDealership": 0,
+    "clean": false,
+    "maintenanceAndInsurance": {
+      "lastServiced": "2018-04-04T08:43:30Z",
+      "lastInsured": "2018-06-07T12:35:52Z"
+    },
+    "fuel": 15
+  },
+  {
+    "type": "car",
+    "vin": "1234567890",
+    "make": "Make",
+    "model": "Test bad year null",
+    "color": "WHite",
+    "year": null,
+    "wheels": 0,
+    "mileage": 77622,
+    "price": 73791.16,
+    "description": 0,
+    "costToDealership": 0,
+    "clean": false,
+    "maintenanceAndInsurance": {
+      "lastServiced": "2018-04-04T08:43:30Z",
+      "lastInsured": "2018-06-07T12:35:52Z"
+    },
+    "fuel": 15
+  },
+  {
+    "type": "car",
+    "vin": "1234567890",
+    "make": "Make",
+    "model": "Test bad year string",
+    "color": "orange",
+    "year": "orange",
+    "wheels": 0,
+    "mileage": 77622,
+    "price": 73791.16,
+    "description": 0,
+    "costToDealership": 0,
+    "clean": false,
+    "maintenanceAndInsurance": {
+      "lastServiced": "2018-04-04T08:43:30Z",
+      "lastInsured": "2018-06-07T12:35:52Z"
+    },
+    "fuel": 15
+  },
+  {
+    "type": "car",
+    "vin": "1234567890",
+    "make": "Make",
+    "model": "Test bad year boolean",
+    "color": "white",
+    "year": true,
+    "wheels": 0,
+    "mileage": 77622,
+    "price": 73791.16,
+    "description": 0,
+    "costToDealership": 0,
+    "clean": false,
+    "maintenanceAndInsurance": {
+      "lastServiced": "2018-04-04T08:43:30Z",
+      "lastInsured": "2018-06-07T12:35:52Z"
+    },
+    "fuel": 15
+  },
+  {
+    "type": "car",
+    "vin": "1234567890",
+    "make": "Make",
+    "model": "Test bad mileage null",
+    "color": "white",
+    "year": 2000,
+    "wheels": 0,
+    "mileage": null,
+    "price": 73791.16,
+    "description": 0,
+    "costToDealership": 0,
+    "clean": false,
+    "maintenanceAndInsurance": {
+      "lastServiced": "2018-04-04T08:43:30Z",
+      "lastInsured": "2018-06-07T12:35:52Z"
+    },
+    "fuel": 15
+  },
+  {
+    "type": "car",
+    "vin": "1234567890",
+    "make": "Make",
+    "model": "Test bad mileage string",
+    "color": "white",
+    "year": 2000,
+    "wheels": 0,
+    "mileage": "Incredible!",
+    "price": 8675309,
+    "description": 0,
+    "costToDealership": 0,
+    "clean": false,
+    "maintenanceAndInsurance": {
+      "lastServiced": "2018-04-04T08:43:30Z",
+      "lastInsured": "2018-06-07T12:35:52Z"
+    },
+    "fuel": 15
+  },
+  {
+    "type": "car",
+    "vin": "1234567890",
+    "make": "Make",
+    "model": "Test bad mileage boolean",
+    "color": "white",
+    "year": 2000,
+    "wheels": 0,
+    "mileage": true,
+    "price": 73791.16,
+    "description": 0,
+    "costToDealership": 0,
+    "clean": false,
+    "maintenanceAndInsurance": {
+      "lastServiced": "2018-04-04T08:43:30Z",
+      "lastInsured": "2018-06-07T12:35:52Z"
+    },
+    "fuel": 15
+  },
+  {
+    "type": "car",
+    "vin": "1234567890",
+    "make": "Make",
+    "model": "Test bad price null",
+    "color": "white",
+    "year": 2000,
+    "wheels": 0,
+    "mileage": 1234,
+    "price": null,
+    "description": 0,
+    "costToDealership": 0,
+    "clean": false,
+    "maintenanceAndInsurance": {
+      "lastServiced": "2018-04-04T08:43:30Z",
+      "lastInsured": "2018-06-07T12:35:52Z"
+    },
+    "fuel": 15
+  },
+  {
+    "type": "car",
+    "vin": "1234567890",
+    "make": "Make",
+    "model": "Test bad price String",
+    "color": "white",
+    "year": 2000,
+    "wheels": 0,
+    "mileage": 1234,
+    "price": "Not a price",
+    "description": 0,
+    "costToDealership": 0,
+    "clean": false,
+    "maintenanceAndInsurance": {
+      "lastServiced": "2018-04-04T08:43:30Z",
+      "lastInsured": "2018-06-07T12:35:52Z"
+    },
+    "fuel": 15
+  },
+  {
+    "type": "car",
+    "vin": "1234567890",
+    "make": "Make",
+    "model": "Test bad clean",
+    "color": "white",
+    "year": 2000,
+    "wheels": 0,
+    "mileage": 1234,
+    "price": 1234,
+    "description": 0,
+    "costToDealership": 0,
+    "clean": "1123",
+    "maintenanceAndInsurance": {
+      "lastServiced": "2018-04-04T08:43:30Z",
+      "lastInsured": "2018-06-07T12:35:52Z"
+    },
+    "fuel": 15
+  },
+  {
+    "type": "car",
+    "vin": "1234567890",
+    "make": "Make",
+    "model": "Test bad maint number",
+    "color": "white",
+    "year": 2000,
+    "wheels": 0,
+    "mileage": 1234,
+    "price": 1234,
+    "description": 0,
+    "costToDealership": 0,
+    "clean": false,
+    "maintenanceAndInsurance": {
+      "lastServiced": 2018,
+      "lastInsured": "2018-06-07T12:35:52Z"
+    },
+    "fuel": 15
+  },
+  {
+    "type": "car",
+    "vin": "1234567890",
+    "make": "Make",
+    "model": "Test bad maint boolean",
+    "color": "white",
+    "year": 2000,
+    "wheels": 0,
+    "mileage": 1234,
+    "price": 1234,
+    "description": 0,
+    "costToDealership": 0,
+    "clean": false,
+    "maintenanceAndInsurance": {
+      "lastServiced": true,
+      "lastInsured": "2018-06-07T12:35:52Z"
+    },
+    "fuel": 15
+  },
+  {
+    "type": "car",
+    "vin": "1234567890",
+    "make": "Make",
+    "model": "Test bad insured number",
+    "color": "white",
+    "year": 2000,
+    "wheels": 0,
+    "mileage": 1234,
+    "price": 1234,
+    "description": 0,
+    "costToDealership": 0,
+    "clean": false,
+    "maintenanceAndInsurance": {
+      "lastServiced": "2018-06-07T12:35:52Z",
+      "lastInsured": 2018
+    },
+    "fuel": 15
+  },
+  {
+    "type": "car",
+    "vin": "1234567890",
+    "make": "Make",
+    "model": "Test bad insured string",
+    "color": "white",
+    "year": 2000,
+    "wheels": 0,
+    "mileage": 1234,
+    "price": 1234,
+    "description": 0,
+    "costToDealership": 0,
+    "clean": false,
+    "maintenanceAndInsurance": {
+      "lastServiced": "2018-06-07T12:35:52Z",
+      "lastInsured": "fifteen"
+    },
+    "fuel": 15
+  }
+]
