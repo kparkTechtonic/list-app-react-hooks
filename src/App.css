@@ -9,3 +9,36 @@
   float: left;
 }
 .element::-webkit-scrollbar { width: 0 !important }
+
+.ant-layout-header{
+  /* position:sticky;
+  top:0;*/
+  z-index: 11; 
+  position: fixed;
+  top:0px;
+  left:0px;
+  width:100vw;
+}
+
+.ant-layout-has-sider{
+
+  margin-top: 64px;
+
+}
+
+.ant-layout-sider{
+  /* margin-top:50px; */
+  position:fixed;
+  z-index: 10;
+}
+
+.ant-layout-content{
+  /* margin-top:50px; */
+  margin-left:180px;
+  height:95vh;
+}
+
+.ant-breadcrumb{
+  position:fixed;
+  z-index: 12;
+}

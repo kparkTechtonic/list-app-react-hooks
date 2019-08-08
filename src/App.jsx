@@ -1,4 +1,4 @@
-import React, { memo, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import {
@@ -12,6 +12,7 @@ import Calculator from './components/calculator';
 import OldIFrames from './components/oldIFrames';
 import Project from './components/projects';
 import About from './components/about';
+import Home from './components/home';
 
 const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
@@ -108,7 +109,7 @@ const App = () => {
                 defaultSelectedKeys={[verticalStoredNavKey]}
                 defaultOpenKeys={['1']}
                 style={{
-                  height: '90vh',
+                  height: '95vh',
                   borderRight: 0,
                   overflow: 'scroll',
                 }}
@@ -181,19 +182,14 @@ const App = () => {
               </Menu>
             </Sider>
             <Layout style={{ padding: '0 24px 24px' }}>
-              <Breadcrumb style={{ margin: '16px 0' }}>
-                <Breadcrumb.Item>Home</Breadcrumb.Item>
-                <Breadcrumb.Item>List</Breadcrumb.Item>
-                <Breadcrumb.Item>App</Breadcrumb.Item>
-              </Breadcrumb>
               <Content
                 style={{
                   background: '#fff',
-                  padding: 24,
-                  margin: 0,
                   minHeight: 280,
+                  width: '90vw',
                 }}
               >
+                <Route exact path="/" component={Home} />
                 <Route path="/display" component={Maindisplay} />
                 <Route path="/form" component={Form} />
                 <Route path="/Calculator" component={Calculator} />
