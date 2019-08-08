@@ -22,4 +22,10 @@ iframe {
   width:50%;
 
 }
-
+.projectContainer{
+  overflow-x:hidden;
+}
+.projectContainer > a > div{
+  border: 1px, solid, black;
+  margin:2rem;
+}
