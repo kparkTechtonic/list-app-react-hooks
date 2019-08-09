@@ -6,6 +6,7 @@
 .ant-card-cover{
   display:inline-block;
   max-height: 230px;
+  width:100%;
 }
 
 .ant-card{

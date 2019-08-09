@@ -42,3 +42,8 @@
   position:fixed;
   z-index: 12;
 }
+
+.ant-layout{
+  width:100vw;
+  Text-overflow:wrap;
+}

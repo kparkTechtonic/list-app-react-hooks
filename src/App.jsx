@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import {
-  Layout, Menu, Breadcrumb, Icon,
+  Layout, Menu, Icon,
 } from 'antd';
 import Context from './Context';
 import './App.css';
@@ -16,16 +16,34 @@ import Home from './components/home';
 
 const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
+const url = window.location.pathname;
 
 const App = () => {
   const [data, setData] = useState('');
   const [formData, setFormData] = useState({});
+  const [horizontalNav, setHorizontalNav] = useState(
+    url === '/' ? '1'
+      : url === '/project' ? '2'
+        : url === '/About' ? '3'
+          : url === '/OldIFrames/CarDealership' ? '2'
+            : url === '/OldIFrames/TeslaWebsite' ? '2'
+              : url === '/OldIFrames/Library' ? '2'
+                : url === '/Calculator' ? '2'
+                  : '',
+  );
+  const [verticalNav] = useState(
+    url === '/OldIFrames/CarDealership' ? '1'
+      : url === '/OldIFrames/TeslaWebsite' ? '2'
+        : url === '/OldIFrames/Library' ? '3'
+          : url === '/Calculator' ? '4'
+            : '',
+  );
   const [projects] = useState([
-    { title: 'CarDealership', description: 'Intro to vanilla JS', port: 5500 },
-    { title: 'TeslaWebsite', description: 'Intro to html/CSS', port: 4500 },
-    { title: 'Library', description: 'Intro to DOM manipulation', port: 4000 },
-    { title: 'Calculator', description: 'intro to React', port: 6000 },
-    { title: 'ChatApp', description: 'intro to express, mongo & SSE', port: 7000 },
+    { title: 'CarDealership', description: 'Using vanilla JS', port: 5500 },
+    { title: 'TeslaWebsite', description: 'Using html/CSS', port: 4500 },
+    { title: 'Library', description: 'Using DOM event', port: 4000 },
+    { title: 'Calculator', description: 'Using React', port: 6000 },
+    { title: 'ChatApp', description: 'Using express, mongo & SSE', port: 7000 },
   ]);
 
   useEffect(() => {
@@ -56,12 +74,34 @@ const App = () => {
     ));
   };
 
-  const url = window.location.pathname;
-  let horizontalStoredNavKey = '';
-  url === '/' ? horizontalStoredNavKey = '1' : url === '/project' ? horizontalStoredNavKey = '2' : url === '/About' ? horizontalStoredNavKey = '3' : horizontalStoredNavKey = '';
+  const updateHighlight = () => {
+    setHorizontalNav('2');
+  };
 
-  let verticalStoredNavKey = '';
-  url === '/OldIFrames/CarDealership' ? verticalStoredNavKey = '1' : url === '/OldIFrames/TeslaWebsite' ? verticalStoredNavKey = '2' : url === '/OldIFrames/Library' ? verticalStoredNavKey = '3' : url === '/Calculator' ? verticalStoredNavKey = '4' : verticalStoredNavKey = '';
+
+  // const updateHorizontalNav = () => {
+  //   url === '/' ? horizontalStoredNavKey = '1'
+  //     : url === '/project' ? horizontalStoredNavKey = '2'
+  //       : url === '/About' ? horizontalStoredNavKey = '3'
+  //         : url === '/OldIFrames/CarDealership' ? horizontalStoredNavKey = '2'
+  //           : url === '/OldIFrames/TeslaWebsite' ? horizontalStoredNavKey = '2'
+  //             : url === '/OldIFrames/Library' ? horizontalStoredNavKey = '2'
+  //               : url === '/Calculator' ? horizontalStoredNavKey = '2'
+  //                 : horizontalStoredNavKey = '';
+  // };
+
+  // const updateVerticalNav = () => {
+  //   url === '/OldIFrames/CarDealership' ? verticalStoredNavKey = '1'
+  //     : url === '/OldIFrames/TeslaWebsite' ? verticalStoredNavKey = '2'
+  //       : url === '/OldIFrames/Library' ? verticalStoredNavKey = '3'
+  //         : url === '/Calculator' ? verticalStoredNavKey = '4'
+  //           : verticalStoredNavKey = '';
+  // };
+
+  // useEffect(() => {
+  // //   updateHorizontalNav();
+  // //   updateVerticalNav();
+  // });
 
   return (
     <Context.Provider
@@ -81,7 +121,7 @@ const App = () => {
             <Menu
               theme="dark"
               mode="horizontal"
-              defaultSelectedKeys={[horizontalStoredNavKey]}
+              defaultSelectedKeys={[horizontalNav]}
               style={{ lineHeight: '64px' }}
             >
 
@@ -106,8 +146,8 @@ const App = () => {
             <Sider width={200} style={{ background: '#fff' }}>
               <Menu
                 mode="inline"
-                defaultSelectedKeys={[verticalStoredNavKey]}
-                defaultOpenKeys={['1']}
+                defaultSelectedKeys={[verticalNav]}
+                defaultOpenKeys={['sub1']}
                 style={{
                   height: '95vh',
                   borderRight: 0,
@@ -138,7 +178,7 @@ const App = () => {
                     Library
                     </Link>
                   </Menu.Item>
-                  <Menu.Item key="4">
+                  <Menu.Item key="4" onClick={updateHighlight}>
                     <Link to="/Calculator">
                     Calculator
                     </Link>
@@ -165,20 +205,7 @@ const App = () => {
                   </Menu.Item>
                   {populateNav()}
                 </SubMenu>
-                <SubMenu
-                  key="sub3"
-                  title={(
-                    <span>
-                      <Icon type="notification" />
-                subnav 3
-                    </span>
-                )}
-                >
-                  <Menu.Item key="9">option9</Menu.Item>
-                  <Menu.Item key="10">option10</Menu.Item>
-                  <Menu.Item key="11">option11</Menu.Item>
-                  <Menu.Item key="12">option12</Menu.Item>
-                </SubMenu>
+
               </Menu>
             </Sider>
             <Layout style={{ padding: '0 24px 24px' }}>

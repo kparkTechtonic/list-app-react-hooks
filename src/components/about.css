@@ -1,60 +1,6 @@
-.ant-layout{
-  position:fixed;
+.ant-typography{
+  width:95%
 }
-
-.mainContent{
-  height: 85vh;
-  width:85vw;
-  position: static;
-  display:flex;
-  flex-direction:column;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.infscroll{
-  /* background-image:url('../scroll-bgimage.jpg'); */
-  background-size: 100%;
-  background-repeat: no-repeat;
-  padding: 5px;
-  height: 100%;
-  width: 100%;
-  overflow:hidden;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  z-index: 1;
-}
-
-
-.stuck{
-  position:sticky;  
-}
-
-#underneath{
-  margin-top:-80vh;
-  position:relative;
-  font-size:4rem;
-  z-index: 10;
-  display:flex;
-  flex-direction:column;
-  justify-content: center;
-  align-items: center;
-}
-
-.ant-layout-sider{
-  z-index: 10;
-}
-
-.device-macbook-pro.device-spacegray .device-power::before{
-  width:100%;
-}
-
-/* @media screen only and (max-width: ) {
-  .device-macbook-pro.device-spacegray{
-
-  }
-} */
-.device-macbook-pro .device-frame::after{
-  width:99%;
+.paragraph{
+padding-left:2%;
 }

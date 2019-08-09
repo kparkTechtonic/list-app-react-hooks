@@ -10,8 +10,6 @@ const Project = memo(() => {
   const { projects } = state;
 
 
-  console.log(projects);
-
   const renderProjects = () => projects.map((obj, i) => (
     <Link key={i + obj.title} to={(obj.title === 'Calculator') ? '/Calculator' : `/OldIFrames/${obj.title}`}>
       <Card
@@ -19,16 +17,7 @@ const Project = memo(() => {
           width: '300px', Height: '900px', marginRight: '15px', display: 'inline-block',
         }}
         cover={(
-          <iframe
-            allowFullScreen
-            style={{
-              width: '1200px', height: '800px', transform: ' scale(.25)',
-            }}
-            className="miniFrame"
-            alt="example"
-            src={(obj.port === 7000) ? 'http://127.0.0.1:7000/cb-frontend/index.html' : (obj.port === 6000) ? 'http://localhost:3000/Calculator' : `http://127.0.0.1:${obj.port}/`}
-            title={obj.title}
-          />
+          <img src={require(`../assets/${obj.title}.png`)} />
         )}
       >
         <Meta
@@ -50,3 +39,15 @@ const Project = memo(() => {
 });
 
 export default Project;
+
+// iframe
+// <iframe
+//            allowFullScreen
+//            style={{
+//              width: '1200px', height: '800px', transform: ' scale(.25)',
+//            }}
+//            className="miniFrame"
+//            alt="example"
+//            src={(obj.port === 7000) ? 'http://127.0.0.1:7000/cb-frontend/index.html' : (obj.port === 6000) ? 'http://localhost:3000/Calculator' : `http://127.0.0.1:${obj.port}/`}
+//            title={obj.title}
+//          />

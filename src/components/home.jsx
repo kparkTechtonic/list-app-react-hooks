@@ -1,34 +1,40 @@
 import React, { useEffect, useState } from 'react';
 import './about.css';
 import '../devices.css';
-
+import './home.css';
+import video from '../assets/landingMov.mp4';
+import head from '../assets/back.png';
 
 const About = () => {
   // const [className, setClassName] = useState('infscroll');
-  const [width, setWidth] = useState(2400);
-  const [marginTop, setMarginTop] = useState('-5rem');
+  const [width, setWidth] = useState('2400px');
+  const [marginTop, setMarginTop] = useState('-9rem');
+  const [marginLeft, setMarginLeft] = useState('3rem');
   const [height, setHeight] = useState('110vh');
-  const [backgroundX, setBackgroundX] = useState(0);
+  const [headMarginTop, setHeadMarginTop] = useState('900px');
+  const [thoughtClass, setThoughtClass] = useState('notThought');
+  const laptopScrollEvent = () => {
+    setTimeout(() => {
+      if (document.querySelector('#root > section > section > section > main').scrollTop <= 1000) {
+        setThoughtClass('notThought');
+        setMarginLeft('3rem');
+        setMarginTop(`${-5 + document.querySelector('#root > section > section > section > main').scrollTop / 100}rem`);
+        setHeight(`${110 - (document.querySelector('#root > section > section > section > main').scrollTop) / 20}vh`);
+        setWidth(`${document.getElementsByClassName('infscroll')[0].clientHeight * 1418 / 775 || 0}px`);
+        setHeadMarginTop(`${900 - (document.querySelector('#root > section > section > section > main').scrollTop) / 1.67}px`);
+      } else if (document.querySelector('#root > section > section > section > main').scrollTop > 1000) {
+        setThoughtClass('thought');
+        setHeadMarginTop(`${300 - (document.querySelector('#root > section > section > section > main').scrollTop - 1000) * 1.2}px`);
+        setMarginTop(`${80 - (document.querySelector('#root > section > section > section > main').scrollTop - 1000) * 1.2}px`);
+      }
+    }, 8);
+  };
+
   useEffect(() => {
-    document.querySelector('#root > section > section > section > main').addEventListener('scroll', () => {
-      setTimeout(() => {
-        console.log(document.querySelector('#root > section > section > section > main').scrollTop);
-        if (document.querySelector('#root > section > section > section > main').scrollTop <= 500) {
-          setHeight('110vh');
-          setWidth(`${2400}px`);
-          setBackgroundX(-document.querySelector('#root > section > section > section > main').scrollTop / 2);
-        } else if (document.querySelector('#root > section > section > section > main').scrollTop > 500
-        && document.querySelector('#root > section > section > section > main').scrollTop < 1600) {
-          setMarginTop(`${-3 + document.querySelector('#root > section > section > section > main').scrollTop / 250}rem`);
-          setHeight(`${1060 / document.querySelector('#root > section > section > section > main').scrollTop * 85}vh`);
-          setWidth(`${document.getElementsByClassName('infscroll')[0].clientHeight * 1418 / 775}px`);
-        } else if (document.querySelector('#root > section > section > section > main').scrollTop > 1600) {
-          console.log('here');
-          setMarginTop(`${3.388 - (document.querySelector('#root > section > section > section > main').scrollTop - 1600) / 10}rem`);
-        }
-        console.log(marginTop);
-      }, 16);
-    });
+    document.querySelector('#root > section > section > section > main').addEventListener('scroll', laptopScrollEvent);
+    return () => {
+      document.querySelector('#root > section > section > section > main').removeEventListener('scroll', laptopScrollEvent);
+    };
   }, []);
 
   // useEffect(() => {
@@ -40,14 +46,16 @@ const About = () => {
     <div
       className="mainContent"
       style={{
+        scroll: 'smooth',
+        marginLeft,
         overflow: 'hidden',
-        height: '3200px',
+        height: '2600px',
       }}
     >
       <div
         className="device device-macbook-pro device-spacegray"
         style={{
-          position: 'fixed',
+          position: 'absolute',
           width,
           height,
           pointerEvents: 'none',
@@ -79,7 +87,6 @@ const About = () => {
                 backgroundSize: 'cover',
                 position: 'sticky',
                 top: 0,
-                backgroundPositionX: backgroundX,
                 height,
                 zIndex: 1,
               }}
@@ -92,13 +99,13 @@ const About = () => {
                 poster="video.jpg"
                 style={{
                   size: '100%',
-                  minWidth: '100%',
-                  minHeight: '100%',
-                  width: 'auto',
-                  height: 'auto',
+                  width: '100%',
+                  height: '110%',
                 }}
               >
-                <source src="https://storage.googleapis.com/mannequin/blobs/b2f6ec83995556095867d0b055d87230.mp4" type="video/mp4" />
+                <source src={video} type="video/mp4" />
+
+                This video is not supported
               </video>
             </div>
 
@@ -112,34 +119,62 @@ const About = () => {
           <div className="device-power" style={{ width: '100%' }} />
         </div>
       </div>
+      <p
+        className={thoughtClass}
+        style={{
+          marginTop: headMarginTop,
+          pointerEvents: 'none',
+          position: 'absolute',
+          marginLeft: '280px',
+          zIndex: 13,
+          fontWeight: 'bold',
+          fontsize: 'large',
+        }}
+      >
+        I cant believe it!
+        <br />
+        {' '}
+        I'm actually coding!
+      </p>
+      <img
+        src={head}
+        alt="head"
+        style={{
+          marginTop: headMarginTop,
+          pointerEvents: 'none',
+          borderBottom: '30px solid black',
+          position: 'absolute',
+          zIndex: 12,
+        }}
+      />
       <div
         id="underneath"
         style={{
-          marginTop: '2200px',
+          marginTop: '1600px',
           width: '100%',
           height: '100%',
-          zIndex: 12,
+          zIndex: 13,
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
         }}
       >
         <h1 style={{ fontSize: '8rem', zIndex: 12 }}>Collin Park</h1>
-        <p>Hungry to learn, ready to join a team, </p>
-        <p>One team, one dream </p>
+        <p>Hungry to learn, ready to contribute, ready to join a team, </p>
 
         <p>Experience using: </p>
         <span style={{
           display: 'flex', alignItems: 'center', width: '100%', justifyContent: 'center',
         }}
         >
-          <img src={require('../assets/html.png')} style={{ width: '9rem', marginRight: '-1rem' }} />
-          <img src={require('../assets/css.png')} style={{ width: '14rem' }} />
-          <img src={require('../assets/es6.svg')} style={{ width: '6.5rem', marginRight: '3rem' }} />
-          <img src={require('../assets/node.png')} style={{ width: '10rem' }} />
-          <img src={require('../assets/mongodb.png')} style={{ width: '10rem' }} />
-          <img src={require('../assets/react.png')} style={{ width: '10rem' }} />
-          <img src={require('../assets/python.jpg')} style={{ width: '10rem' }} />
+          <img src={require('../assets/html.png')} style={{ width: '7vw', marginRight: '-1rem' }} />
+          <img src={require('../assets/css.png')} style={{ width: '11vw' }} />
+          <img src={require('../assets/es6.svg')} style={{ width: '5.2vw', marginRight: '3rem' }} />
+          <img src={require('../assets/node.png')} style={{ width: '7vw' }} />
+          <img src={require('../assets/mongodb.png')} style={{ width: '7vw' }} />
+          <img src={require('../assets/react.png')} style={{ width: '7vw' }} />
+          <img src={require('../assets/python.jpg')} style={{ width: '7vw' }} />
+          <img src={require('../assets/express.png')} style={{ width: '10vw' }} />
         </span>
       </div>
     </div>
@@ -188,3 +223,23 @@ export default About;
 //     </div>
 //   </div>
 // );
+
+
+//                <source src="https://storage.googleapis.com/mannequin/blobs/b2f6ec83995556095867d0b055d87230.mp4" type="video/mp4" />
+
+// <video
+//   autoPlay
+//   loop
+//   muted
+//   className="banner__video"
+//   poster="video.jpg"
+//   style={{
+//     size: '100%',
+//     width: '100%',
+//     height: '110%',
+//   }}
+// >
+//   <source src={imgGif} type="video/mp4" />
+
+//   This video is not supported
+// </video>
