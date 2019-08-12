@@ -2,6 +2,34 @@
   position:fixed;
 }
 
+.downArrow {
+  position: absolute;
+  z-index: 15;
+  top: 80%;
+  left: 57%;
+  width: 46px;
+  height: 46px;
+  margin-left: -23px;
+  border: 1px solid #fff;
+  border-radius: 100%;
+  box-sizing: border-box;
+}
+
+.downArrow::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  content: '';
+  width: 16px;
+  height: 16px;
+  margin: -12px 0 0 -8px;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  box-sizing: border-box;
+}
+
 .mainContent{
   height: 85vh;
   width:85vw;
@@ -59,13 +87,13 @@
   width:99%;
 }
 
-p.notThought{
+.notThought{
   display:none
 }
 
 p.thought {
   position:relative; /*see the support section below for more info*/
-  width:280px; /*size of the bubble*/
+  width:180px; /*size of the bubble*/
   padding:20px 40px;
   margin:10px 10px 80px 40px;
   /**give the bubble's background a gradient**/

@@ -1,12 +1,21 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './oldIFrames.css';
 
 const OldIFrames = ({ match }) => {
+  const [width, setWidth] = useState('100%');
   useEffect(() => {
     window.addEventListener('message', (a) => {
       console.log(a.data);
     });
   }, []);
+
+  const changeWidth = () => {
+    if (width === '100%') {
+      setWidth('30%');
+    } else {
+      setWidth('100%');
+    }
+  };
 
 
   if (match.params.id === 'CarDealership') {
@@ -15,7 +24,14 @@ const OldIFrames = ({ match }) => {
   }
   if (match.params.id === 'TeslaWebsite') {
     return (
-      <iframe title="TeslaWebsite" src="http://127.0.0.1:4500/index.html" frameBorder="0" />);
+      <div style={{
+        position: 'relative', height: '100%', width, display: 'flex', flexDirection: 'row',
+      }}
+      >
+        <iframe title="TeslaWebsite" src="http://127.0.0.1:4500/index.html" frameBorder="0" />
+        <button onClick={changeWidth}>{width === '100%' ? '< Click to resize' : 'Click to resize >'}</button>
+      </div>
+    );
   }
   if (match.params.id === 'Library') {
     return (
