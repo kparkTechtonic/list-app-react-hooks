@@ -31,7 +31,7 @@ const About = () => {
         setThoughtClass('notThought');
         setMarginLeft('3rem');
         setMarginTop(`${-5 + document.querySelector('#root > section > section > section > main').scrollTop / 100}rem`);
-        setHeight(`${110 - (document.querySelector('#root > section > section > section > main').scrollTop) / 20}vh`);
+        setHeight(`${110 - (document.querySelector('#root > section > section > section > main').scrollTop) / 17}vh`);
         setWidth(`${document.getElementsByClassName('infscroll')[0].clientHeight * 1418 / 775 || 0}px`);
         setHeadMarginTop(`${900 - (document.querySelector('#root > section > section > section > main').scrollTop) / 1.67}px`);
       } else if (document.querySelector('#root > section > section > section > main').scrollTop > 1000) {

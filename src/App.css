@@ -48,3 +48,24 @@
   Text-overflow:wrap;
   overflow:hidden
 }
+
+@media only screen and (max-width: 600px) {
+  .mainContent{
+    margin-left:0 !important;
+  }
+  .ant-layout{
+    margin-left:0 ;
+  }
+
+
+  aside.ant-layout-sider.ant-layout-sider-dark{
+    display:none;
+  }
+  .ant-layout-content{
+    margin-left:0;
+    padding-top:5px
+  }
+  /* .ant-layout-header{
+    display:none
+  } */
+}
