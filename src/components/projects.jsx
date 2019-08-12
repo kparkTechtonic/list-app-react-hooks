@@ -17,7 +17,7 @@ const Project = memo(() => {
           width: '300px', Height: '900px', marginRight: '15px', display: 'inline-block',
         }}
         cover={(
-          <img src={require(`../assets/${obj.title}.png`)} />
+          <img alt={obj.title} src={require(`../assets/${obj.title}.png`)} />
         )}
       >
         <Meta

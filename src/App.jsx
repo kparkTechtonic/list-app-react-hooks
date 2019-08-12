@@ -58,21 +58,6 @@ const App = () => {
     fetchData();
   }, []);
 
-  const populateNav = () => {
-    if (!data) {
-      return (<Menu.Item key="7">Loading...</Menu.Item>);
-    }
-    return data.map(item => (
-      <Menu.Item
-        key={item.time + item.title}
-        id={item.time}
-      >
-        <Link to={`/display/:${item._id}`}>
-          {item ? item.title : 'loading...'}
-        </Link>
-      </Menu.Item>
-    ));
-  };
 
   const updateHighlight = () => {
     setHorizontalNav('2');
@@ -213,6 +198,21 @@ Earlier projects
 
 export default App;
 
+// const populateNav = () => {
+// if (!data) {
+//    //return (<Menu.Item key="7">Loading...</Menu.Item>);
+//  }
+//  return data.map(item => (
+//    //<Menu.Item
+//      //key={item.time + item.title}
+//      //id={item.time}
+//    //>
+//      //<Link to={`/display/:${item._id}`}>
+//        //{item ? item.title : 'loading...'}
+//      //</Link>
+//    //</Menu.Item>
+//  ));
+// };
 
 // <SubMenu
 //  key="sub2"

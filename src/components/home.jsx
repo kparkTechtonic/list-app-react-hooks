@@ -213,14 +213,14 @@ const About = () => {
           display: 'flex', alignItems: 'center', width: '100%', justifyContent: 'center',
         }}
         >
-          <img src={require('../assets/html.png')} style={{ width: '7vw', marginRight: '-1rem' }} />
-          <img src={require('../assets/css.png')} style={{ width: '11vw' }} />
-          <img src={require('../assets/es6.svg')} style={{ width: '5.2vw', marginRight: '3rem' }} />
-          <img src={require('../assets/node.png')} style={{ width: '7vw' }} />
-          <img src={require('../assets/mongodb.png')} style={{ width: '7vw' }} />
-          <img src={require('../assets/react.png')} style={{ width: '7vw' }} />
-          <img src={require('../assets/python.jpg')} style={{ width: '7vw' }} />
-          <img src={require('../assets/express.png')} style={{ width: '10vw' }} />
+          <img src={require('../assets/html.png')} alt="language icon" style={{ width: '7vw', marginRight: '-1rem' }} />
+          <img src={require('../assets/css.png')} alt="language icon" style={{ width: '11vw' }} />
+          <img src={require('../assets/es6.svg')} alt="language icon" style={{ width: '5.2vw', marginRight: '3rem' }} />
+          <img src={require('../assets/node.png')} alt="language icon" style={{ width: '7vw' }} />
+          <img src={require('../assets/mongodb.png')} alt="language icon" style={{ width: '7vw' }} />
+          <img src={require('../assets/react.png')} alt="language icon" style={{ width: '7vw' }} />
+          <img src={require('../assets/python.jpg')} alt="language icon" style={{ width: '7vw' }} />
+          <img src={require('../assets/express.png')} alt="language icon" style={{ width: '10vw' }} />
         </span>
       </div>
     </div>
