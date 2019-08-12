@@ -141,7 +141,6 @@ const App = () => {
               <Menu
                 mode="inline"
                 defaultSelectedKeys={[verticalNav]}
-                defaultOpenKeys={['sub1']}
                 style={{
                   height: '95vh',
                   borderRight: 0,
@@ -184,22 +183,7 @@ Earlier projects
                     </Link>
                   </Menu.Item>
                 </SubMenu>
-                <SubMenu
-                  key="sub2"
-                  title={(
-                    <span>
-                      <Icon type="laptop" />
-                Current projects
-                    </span>
-                )}
-                >
-                  <Menu.Item key="6">
-                    <Link to="/form">
-          New List
-                    </Link>
-                  </Menu.Item>
-                  {populateNav()}
-                </SubMenu>
+
 
               </Menu>
             </Sider>
@@ -228,3 +212,21 @@ Earlier projects
 };
 
 export default App;
+
+
+// <SubMenu
+//  key="sub2"
+//  title={(
+//    <span>
+//      <Icon type="laptop" />
+// Current projects
+//    </span>
+// )}
+// >
+//  <Menu.Item key="6">
+//    <Link to="/form">
+//          New List
+//    </Link>
+//  </Menu.Item>
+//  {populateNav()}
+// </SubMenu>
