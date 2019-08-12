@@ -8,14 +8,26 @@ import head from '../assets/back.png';
 const About = () => {
   // const [className, setClassName] = useState('infscroll');
   const [width, setWidth] = useState('2400px');
-  const [marginTop, setMarginTop] = useState('-9rem');
+  const [marginTop, setMarginTop] = useState('-5rem');
   const [marginLeft, setMarginLeft] = useState('3rem');
   const [height, setHeight] = useState('110vh');
   const [headMarginTop, setHeadMarginTop] = useState('900px');
   const [thoughtClass, setThoughtClass] = useState('notThought');
+  const [downArrow, setDownArrow] = useState('downArrow');
+  const [scrollColor, setScrollColor] = useState('white');
+  const [opacity, setOpacity] = useState(1);
   const laptopScrollEvent = () => {
     setTimeout(() => {
-      if (document.querySelector('#root > section > section > section > main').scrollTop <= 1000) {
+      console.log(document.querySelector('#root > section > section > section > main').scrollTop);
+      if (document.querySelector('#root > section > section > section > main').scrollTop < 1) {
+        setScrollColor('white');
+        setDownArrow('downArrow');
+        setMarginLeft('3rem');
+      } else if (document.querySelector('#root > section > section > section > main').scrollTop <= 1000
+      && document.querySelector('#root > section > section > section > main').scrollTop > 1) {
+        setOpacity(1);
+        setScrollColor('grey');
+        setDownArrow('downArrow');
         setThoughtClass('notThought');
         setMarginLeft('3rem');
         setMarginTop(`${-5 + document.querySelector('#root > section > section > section > main').scrollTop / 100}rem`);
@@ -23,7 +35,8 @@ const About = () => {
         setWidth(`${document.getElementsByClassName('infscroll')[0].clientHeight * 1418 / 775 || 0}px`);
         setHeadMarginTop(`${900 - (document.querySelector('#root > section > section > section > main').scrollTop) / 1.67}px`);
       } else if (document.querySelector('#root > section > section > section > main').scrollTop > 1000) {
-        setThoughtClass('thought');
+        setDownArrow('notThought');
+        setOpacity(1 - (document.querySelector('#root > section > section > section > main').scrollTop - 1000) / 600);
         setHeadMarginTop(`${300 - (document.querySelector('#root > section > section > section > main').scrollTop - 1000) * 1.2}px`);
         setMarginTop(`${80 - (document.querySelector('#root > section > section > section > main').scrollTop - 1000) * 1.2}px`);
       }
@@ -41,6 +54,25 @@ const About = () => {
   //   console.log(marginTop);
   // });
 
+  const scrollDown = () => {
+    if (document.querySelector('#root > section > section > section > main').scrollTop < 500) {
+      document.querySelector('#root > section > section > section > main').scroll({
+        top: 870,
+        left: 0,
+        behavior: 'smooth',
+      });
+      setScrollColor('black');
+    } else {
+      document.querySelector('#root > section > section > section > main').scroll({
+        top: 1800,
+        left: 0,
+        behavior: 'smooth',
+      });
+      setScrollColor('black');
+    }
+    console.log(document.querySelector('#root > section > section > section > main').scrollTop);
+  };
+
   return (
 
     <div
@@ -52,6 +84,18 @@ const About = () => {
         height: '2600px',
       }}
     >
+
+      <span className={downArrow} onClick={scrollDown}>
+        <p style={{
+          marginTop: '-47px', marginLeft: '-17px', fontSize: '2rem', color: scrollColor, zIndex: 15,
+        }}
+        >
+          {/* Scroll */}
+
+        </p>
+
+      </span>
+
       <div
         className="device device-macbook-pro device-spacegray"
         style={{
@@ -62,6 +106,7 @@ const About = () => {
           zIndex: 0,
           marginTop,
           marginRight: '-15rem',
+          opacity,
         }}
       >
         <div
@@ -131,10 +176,10 @@ const About = () => {
           fontsize: 'large',
         }}
       >
-        I cant believe it!
+        This is me,
         <br />
         {' '}
-        I'm actually coding!
+        coding!
       </p>
       <img
         src={head}
@@ -145,6 +190,7 @@ const About = () => {
           borderBottom: '30px solid black',
           position: 'absolute',
           zIndex: 12,
+          opacity,
         }}
       />
       <div
@@ -159,7 +205,7 @@ const About = () => {
           alignItems: 'center',
         }}
       >
-        <h1 style={{ fontSize: '8rem', zIndex: 12 }}>Collin Park</h1>
+        <h1 style={{ fontSize: '8vw', zIndex: 12 }}>Collin Park</h1>
         <p>Hungry to learn, ready to contribute, ready to join a team, </p>
 
         <p>Experience using: </p>

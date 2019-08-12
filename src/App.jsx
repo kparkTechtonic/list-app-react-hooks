@@ -40,7 +40,7 @@ const App = () => {
   );
   const [projects] = useState([
     { title: 'CarDealership', description: 'Using vanilla JS', port: 5500 },
-    { title: 'TeslaWebsite', description: 'Using html/CSS', port: 4500 },
+    { title: 'TeslaWebsite', description: 'html/CSS, mobile responsive', port: 4500 },
     { title: 'Library', description: 'Using DOM event', port: 4000 },
     { title: 'Calculator', description: 'Using React', port: 6000 },
     { title: 'ChatApp', description: 'Using express, mongo & SSE', port: 7000 },
@@ -126,19 +126,13 @@ const App = () => {
             >
 
               <Menu.Item key="1">
-                <Link to="/">
-            Home
-                </Link>
+                <Link to="/">Home</Link>
               </Menu.Item>
               <Menu.Item key="2">
-                <Link to="/project">
-            Projects
-                </Link>
+                <Link to="/project">Projects</Link>
               </Menu.Item>
               <Menu.Item key="3">
-                <Link to="/About">
-            About me
-                </Link>
+                <Link to="/About">About me</Link>
               </Menu.Item>
             </Menu>
           </Header>
@@ -159,7 +153,8 @@ const App = () => {
                   title={(
                     <span>
                       <Icon type="user" />
-                Earlier projects
+Earlier projects
+
                     </span>
                   )}
                 >
@@ -213,7 +208,7 @@ const App = () => {
                 style={{
                   background: '#fff',
                   minHeight: 280,
-                  width: '90vw',
+                  width: '85vw',
                 }}
               >
                 <Route exact path="/" component={Home} />

@@ -41,10 +41,10 @@ and
         <Text code>MatPlotLib</Text>
       </Paragraph>
       <Paragraph className="paragraph">
-      I've been very fortunate to be selected to study web design as an apprentice at Techtonic LLC.
+      I've been very fortunate to be selected to study web development as an apprentice at Techtonic LLC.
         {' '}
         <br />
-Through the guidance of their awesome instructional team had the opportunity to learn
+Through the guidance of their awesome instructional team, I had the opportunity to learn
         {' '}
         <Text code>HTML</Text>
 ,
@@ -125,9 +125,11 @@ with the exception of
         {' '}
 for the
         {' '}
-        <Text code> Higher Order Component </Text>
+        <Text code> Higher Order Components</Text>
         {' '}
-to be consumed with the context hook
+to be consumed with the
+        {' '}
+        <Text code>context hook</Text>
         {' '}
         <Text code>API</Text>
 .
@@ -143,12 +145,7 @@ to be consumed with the context hook
           <li>
             <a href="https://www.linkedin.com/in/c-p/">Linkedin</a>
           </li>
-          <li>
-            <a href="/docs/pattern/navigation">Patterns</a>
-          </li>
-          <li>
-            <a href="/docs/resource/download">Resource Download</a>
-          </li>
+
         </ul>
       </Paragraph>
 

@@ -10,8 +10,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.1",
-    "react-scripts": "3.0.1",
-    "sass": "^1.22.9"
+    "react-scripts": "3.0.1"
   },
   "scripts": {
     "start": "(cd library-phase-one-kparkTechtonic; npx live-server --port=4000 --no-browser&)&&(cd html-css-201-assignment-kparkTechtonic; npx live-server --port=4500 --no-browser&)&&(cd car-dealership-console-app-kparkTechtonic; npx live-server --port=5500 --no-browser&)&&(cd comment-board-hackathon-kparkTechtonic; npx live-server --port=7000 --no-browser&)&&(react-scripts start)&",

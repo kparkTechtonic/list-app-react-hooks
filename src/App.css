@@ -46,4 +46,5 @@
 .ant-layout{
   width:100vw;
   Text-overflow:wrap;
+  overflow:hidden
 }
