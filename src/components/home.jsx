@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import './about.css';
 import '../devices.css';
 import './home.css';
-import video from '../assets/landingMov.mp4';
 import head from '../assets/back.png';
 
 const About = () => {
@@ -142,16 +141,11 @@ const About = () => {
                 muted
                 className="banner__video"
                 poster="video.jpg"
-                style={{
-                  size: '100%',
-                  width: '100%',
-                  height: '110%',
-                }}
+                style={{ width: '100%' }}
               >
-                <source src={video} type="video/mp4" />
-
-                This video is not supported
+                <source src="https://firebasestorage.googleapis.com/v0/b/first-js-project-c5a77.appspot.com/o/landingMov.mp4?alt=media&token=e140ed1b-f9b2-4d7e-b3e9-64d98aa3a28e" type="video/mp4" />
               </video>
+
             </div>
 
           </div>
@@ -289,3 +283,33 @@ export default About;
 
 //   This video is not supported
 // </video>
+
+
+// <video
+//  autoPlay
+//  loop
+//  muted
+//  className="banner__video"
+//  poster="video.jpg"
+//  style={{
+//    size: '100%',
+//    width: '100%',
+//    height: '110%',
+//  }}
+// >
+//  <source src={video} type="video/mp4" />
+
+//  This video is not supported
+// </video>
+
+
+//  <iframe
+//    src="https://www.youtube.com/watch?v=zQdQSQ5BoHM"
+
+//    style={{
+
+//      width: '100%',
+//      height: '100%',
+//      frameBorder: '0',
+//    }}
+//  />
