@@ -1,3 +1,7 @@
 #myChart{
   padding: 50px;
 }
+
+.chartjs-size-monitor{
+  width:10%
+}

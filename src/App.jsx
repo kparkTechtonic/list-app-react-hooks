@@ -100,67 +100,12 @@ const App = () => {
             </Menu>
           </Header>
           <Layout>
-            <Sider width={200} style={{ background: '#fff' }}>
-              <Menu
-                mode="inline"
-                defaultSelectedKeys={[verticalNav]}
-                style={{
-                  height: '95vh',
-                  borderRight: 0,
-                  overflow: 'scroll',
-                }}
-              >
-                <SubMenu
-                  key="sub1"
-                  title={(
-                    <span>
-                      <Icon type="user" />
-Earlier projects
 
-                    </span>
-                  )}
-                >
-                  <Menu.Item key="1">
-                    <Link to="/OldIFrames/CarDealership">
-                    CarDealership
-                    </Link>
-                  </Menu.Item>
-                  <Menu.Item key="2">
-                    <Link to="/OldIFrames/TeslaWebsite">
-                    Tesla website
-                    </Link>
-                  </Menu.Item>
-                  <Menu.Item key="3">
-                    <Link to="/OldIFrames/Library">
-                    Library
-                    </Link>
-                  </Menu.Item>
-                  <Menu.Item key="4" onClick={updateHighlight}>
-                    <Link to="/Calculator">
-                    Calculator
-                    </Link>
-                  </Menu.Item>
-                  <Menu.Item key="5">
-                    <Link to="/OldIFrames/ChatApp">
-                    Chat App
-                    </Link>
-                  </Menu.Item>
-                  <Menu.Item key="6">
-                    <Link to="/Chart">
-                    Chart
-                    </Link>
-                  </Menu.Item>
-                </SubMenu>
-
-
-              </Menu>
-            </Sider>
-            <Layout style={{ padding: '0 24px 24px' }}>
+            <Layout style={{ marginTop: '64px' }}>
               <Content
                 style={{
                   background: '#fff',
                   minHeight: 280,
-                  width: '85vw',
                 }}
               >
                 <Route exact path="/" component={Home} />
@@ -214,3 +159,63 @@ export default App;
 //  </Menu.Item>
 //  {populateNav()}
 // </SubMenu>
+
+
+//    <Sider
+//              id="none"
+//              style={{ background: '#fff' }}
+//            //>
+//              <Menu
+//                //mode="inline"
+//                //defaultSelectedKeys={[verticalNav]}
+//                //style={{
+//                  height: '95vh',
+//                  borderRight: 0,
+//                  overflow: 'scroll',
+//                //}}
+//              >
+//                //<SubMenu
+//                  key="sub1"
+//                  title={(
+//                    //<span>
+//                      <Icon type="user" />
+//      Earlier projects
+
+//                    //</span>
+//                  )}
+//                //>
+//                  <Menu.Item key="1">
+//                    //<Link to="/OldIFrames/CarDealership">
+//                    //CarDealership
+//                    //</Link>
+//                  </Menu.Item>
+//                  <Menu.Item key="2">
+//                    //<Link to="/OldIFrames/TeslaWebsite">
+//                    //Tesla website
+//                    //</Link>
+//                  </Menu.Item>
+//                  <Menu.Item key="3">
+//                    //<Link to="/OldIFrames/Library">
+//                    //Library
+//                    //</Link>
+//                  </Menu.Item>
+//                  <Menu.Item key="4" onClick={updateHighlight}>
+//                    //<Link to="/Calculator">
+//                    //Calculator
+//                    //</Link>
+//                  </Menu.Item>
+//                  <Menu.Item key="5">
+//                    //<Link to="/OldIFrames/ChatApp">
+//                    //Chat App
+//                    //</Link>
+//                  </Menu.Item>
+//                  <Menu.Item key="6">
+//                    //<Link to="/Chart">
+//                    //Chart
+//                    //</Link>
+//                  </Menu.Item>
+//                //</SubMenu>
+
+
+//              </Menu>
+//            </Sider>

@@ -36,6 +36,7 @@ function App() {
   };
 
   const handleChart = (e) => {
+    document.getElementsByClassName('chartjs-size-monitor')[0].remove();
     changeDataRange(e.target.name);
     document.getElementById('myChart').remove();
     const newCanvas = document.createElement('canvas');
@@ -106,9 +107,12 @@ function App() {
     });
   }, []);
   return (
-    <div className="App">
+    <div className="container">
 
-      <span>
+      <span style={{
+        position: 'fixed',
+      }}
+      >
         <button name="1 year" onClick={handleChart}>1 year</button>
         <button name="5 years" onClick={handleChart}>5 years</button>
         <button name="10 years" onClick={handleChart}>10 years</button>
@@ -116,7 +120,9 @@ function App() {
         <button name="full range" onClick={handleChart}>full range</button>
 
       </span>
-      <canvas id="myChart" width="100%" height="50%" />
+      <div className="App" style={{ width: '90%' }}>
+        <canvas id="myChart" width="100%" height="50%" />
+      </div>
 
     </div>
   );

@@ -9,10 +9,10 @@ const About = () => {
     document.querySelector('#root > section > section > section > main').scrollTop = 0;
   }, []);
   // const [className, setClassName] = useState('infscroll');
-  const [width, setWidth] = useState('2400px');
+  const [width, setWidth] = useState('120vw');
   const [marginTop, setMarginTop] = useState('-5rem');
   const [marginLeft, setMarginLeft] = useState('3rem');
-  const [height, setHeight] = useState('110vh');
+  const [height, setHeight] = useState('130vh');
   const [headMarginTop, setHeadMarginTop] = useState('900px');
   const [thoughtClass, setThoughtClass] = useState('notThought');
   const [downArrow, setDownArrow] = useState('downArrow');
@@ -33,7 +33,7 @@ const About = () => {
         setThoughtClass('notThought');
         setMarginLeft('3rem');
         setMarginTop(`${-5 + document.querySelector('#root > section > section > section > main').scrollTop / 100}rem`);
-        setHeight(`${110 - (document.querySelector('#root > section > section > section > main').scrollTop) / 17}vh`);
+        setHeight(`${130 - (document.querySelector('#root > section > section > section > main').scrollTop) / 12}vh`);
         setWidth(`${document.getElementsByClassName('infscroll')[0].clientHeight * 1418 / 775 || 0}px`);
         setHeadMarginTop(`${900 - (document.querySelector('#root > section > section > section > main').scrollTop) / 1.67}px`);
       } else if (document.querySelector('#root > section > section > section > main').scrollTop > 1000) {
@@ -89,7 +89,7 @@ const About = () => {
 
       <span className={downArrow} onClick={scrollDown}>
         <p style={{
-          marginTop: '-47px', marginLeft: '-17px', fontSize: '2rem', color: scrollColor, zIndex: 15,
+          marginTop: '-47px', fontSize: '2rem', color: scrollColor, zIndex: 15,
         }}
         >
           {/* Scroll */}

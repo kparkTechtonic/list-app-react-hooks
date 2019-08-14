@@ -1,5 +1,8 @@
 @import '~antd/dist/antd.css';
 
+#none{
+  display:none;
+}
 
 #components-layout-demo-fixed .logo {
   width: 120px;
@@ -20,33 +23,37 @@
   width:100vw;
 }
 
-.ant-layout-has-sider{
+/* .ant-layout-has-sider{
 
   margin-top: 64px;
 
 }
 
 .ant-layout-sider{
-  /* margin-top:50px; */
+  margin-top:50px;
   position:fixed;
   z-index: 10;
+} */
+
+.ant-layout{
+  width:100vw;
 }
 
 .ant-layout-content{
   /* margin-top:50px; */
-  margin-left:180px;
-  height:95vh;
+  width:100vw;
+  height:100%;
+  z-index: 13;
 }
 
-.ant-breadcrumb{
-  position:fixed;
-  z-index: 12;
-}
+
 
 .ant-layout{
+  height:95vh;
   width:100vw;
   Text-overflow:wrap;
-  overflow:hidden
+  overflow:hidden;
+  /* padding:0px 5px 0px 5px; */
 }
 
 @media only screen and (max-width: 800px) {
