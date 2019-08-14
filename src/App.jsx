@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
+// import axios from 'axios';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import {
   Layout, Menu, Icon,
@@ -9,6 +9,7 @@ import './App.css';
 import Maindisplay from './components/Maindisplay';
 import Form from './components/Form';
 import Calculator from './components/calculator';
+import Chart from './components/Chart';
 import OldIFrames from './components/oldIFrames';
 import Project from './components/projects';
 import About from './components/about';
@@ -19,7 +20,7 @@ const { Header, Content, Sider } = Layout;
 const url = window.location.pathname;
 
 const App = () => {
-  const [data, setData] = useState('');
+  const [data] = useState('');
   const [formData, setFormData] = useState({});
   const [horizontalNav, setHorizontalNav] = useState(
     url === '/' ? '1'
@@ -44,49 +45,26 @@ const App = () => {
     { title: 'Library', description: 'Using DOM event', port: 4000 },
     { title: 'Calculator', description: 'Using React', port: 6000 },
     { title: 'ChatApp', description: 'Using express, mongo & SSE', port: 7000 },
+    { title: 'Chart', description: 'Using chart.js', port: 7000 },
+
   ]);
 
-  useEffect(() => {
-    async function fetchData() {
-      const response = await axios.get('http://localhost:3002/list/').then((r) => {
-        // console.log(r.data);
-        setData(r.data);
-        return r.data;
-      });
-      return response;
-    }
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   // async function fetchData() {
+  //   //   const response = await axios.get('http://localhost:3002/list/').then((r) => {
+  //   //     // console.log(r.data);
+  //   //     setData(r.data);
+  //   //     return r.data;
+  //   //   });
+  //   //   return response;
+  //   // }
+  //   // fetchData();
+  // }, []);
 
 
   const updateHighlight = () => {
     setHorizontalNav('2');
   };
-
-
-  // const updateHorizontalNav = () => {
-  //   url === '/' ? horizontalStoredNavKey = '1'
-  //     : url === '/project' ? horizontalStoredNavKey = '2'
-  //       : url === '/About' ? horizontalStoredNavKey = '3'
-  //         : url === '/OldIFrames/CarDealership' ? horizontalStoredNavKey = '2'
-  //           : url === '/OldIFrames/TeslaWebsite' ? horizontalStoredNavKey = '2'
-  //             : url === '/OldIFrames/Library' ? horizontalStoredNavKey = '2'
-  //               : url === '/Calculator' ? horizontalStoredNavKey = '2'
-  //                 : horizontalStoredNavKey = '';
-  // };
-
-  // const updateVerticalNav = () => {
-  //   url === '/OldIFrames/CarDealership' ? verticalStoredNavKey = '1'
-  //     : url === '/OldIFrames/TeslaWebsite' ? verticalStoredNavKey = '2'
-  //       : url === '/OldIFrames/Library' ? verticalStoredNavKey = '3'
-  //         : url === '/Calculator' ? verticalStoredNavKey = '4'
-  //           : verticalStoredNavKey = '';
-  // };
-
-  // useEffect(() => {
-  // //   updateHorizontalNav();
-  // //   updateVerticalNav();
-  // });
 
   return (
     <Context.Provider
@@ -167,6 +145,11 @@ Earlier projects
                     Chat App
                     </Link>
                   </Menu.Item>
+                  <Menu.Item key="6">
+                    <Link to="/Chart">
+                    Chart
+                    </Link>
+                  </Menu.Item>
                 </SubMenu>
 
 
@@ -184,6 +167,7 @@ Earlier projects
                 <Route path="/display" component={Maindisplay} />
                 <Route path="/form" component={Form} />
                 <Route path="/Calculator" component={Calculator} />
+                <Route path="/Chart" component={Chart} />
                 <Route path="/OldIFrames/:id" component={OldIFrames} />
                 <Route path="/project" component={Project} />
                 <Route path="/About" component={About} />

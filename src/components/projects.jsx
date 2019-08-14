@@ -1,4 +1,4 @@
-import React, { memo, useContext } from 'react';
+import React, { memo, useContext, useEffect } from 'react';
 import { Card, Avatar } from 'antd';
 import Context from '../Context';
 import './projects.css';
@@ -9,9 +9,12 @@ const Project = memo(() => {
   const { state } = useContext(Context);
   const { projects } = state;
 
+  useEffect(() => {
+    document.querySelector('#root > section > section > section > main').scrollTop = 0;
+  }, []);
 
   const renderProjects = () => projects.map((obj, i) => (
-    <Link key={i + obj.title} to={(obj.title === 'Calculator') ? '/Calculator' : `/OldIFrames/${obj.title}`}>
+    <Link key={i + obj.title} to={(obj.title === 'Calculator') ? '/Calculator' : (obj.title === 'Chart') ? '/Chart' : `/OldIFrames/${obj.title}`}>
       <Card
         style={{
           width: '300px', Height: '900px', marginRight: '15px', display: 'inline-block',
@@ -30,7 +33,7 @@ const Project = memo(() => {
 
   ));
 
-  console.log(renderProjects());
+  // console.log(renderProjects());
   return (
     <div className="projectContainer">
       {renderProjects()}

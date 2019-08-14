@@ -5,6 +5,9 @@ import './home.css';
 import head from '../assets/back.png';
 
 const About = () => {
+  useEffect(() => {
+    document.querySelector('#root > section > section > section > main').scrollTop = 0;
+  }, []);
   // const [className, setClassName] = useState('infscroll');
   const [width, setWidth] = useState('2400px');
   const [marginTop, setMarginTop] = useState('-5rem');
@@ -17,7 +20,7 @@ const About = () => {
   const [opacity, setOpacity] = useState(1);
   const laptopScrollEvent = () => {
     setTimeout(() => {
-      console.log(document.querySelector('#root > section > section > section > main').scrollTop);
+      // console.log(document.querySelector('#root > section > section > section > main').scrollTop);
       if (document.querySelector('#root > section > section > section > main').scrollTop < 1) {
         setScrollColor('white');
         setDownArrow('downArrow');
