@@ -20,7 +20,7 @@ const About = () => {
 
       </Paragraph>
       <Paragraph className="paragraph">
-Towards the end of the academic career, I was starting to teach myself data science, using
+I had started to teach myself data science, using
         {' '}
         <Text code>Python</Text>
         {' '}
@@ -88,10 +88,14 @@ Backend technologies were also explored, with
 as the language,
         {' '}
         <Text code>MongoDB</Text>
+        and
+        <Text code>Firestore</Text>
         {' '}
 as the database and with frameworks like
         {' '}
         <Text code>Express</Text>
+        <Text code>Google Serverless Functions</Text>
+
         {' '}
 and
         {' '}
@@ -108,9 +112,9 @@ and
 into the apprenticeship program.
         {' '}
         <br />
-My biggest strength is probably my ability to absorb information like a sponge,
+My biggest strength is probably my ability to learn and fully grasp information very quickly,
         {' '}
-        <Text strong>and get super invested in it too.</Text>
+        <Text strong>and develop a passion in it too.</Text>
       </Paragraph>
       <Paragraph className="paragraph">
 This website was made using
@@ -135,11 +139,10 @@ to be consumed with the
         {' '}
         <Text code>API</Text>
 .
-
       </Paragraph>
       <Title level={2}>How to find me</Title>
       <Paragraph className="paragraph">
-      I'm loving life in the Broomfield area of Colorado,
+      I'm loving life in the Broomfield area of Colorado.
       </Paragraph>
 
       <Paragraph className="paragraph">
@@ -147,7 +150,9 @@ to be consumed with the
           <li>
             <a href="https://www.linkedin.com/in/c-p/">Linkedin</a>
           </li>
-
+          <li>
+            <p>Phone - (424) 274 - 1770</p>
+          </li>
         </ul>
       </Paragraph>
 

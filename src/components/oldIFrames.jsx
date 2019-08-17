@@ -41,8 +41,8 @@ const OldIFrames = ({ match }) => {
   if (match.params.id === 'ChatApp') {
     return (
       <>
-        <iframe className="shared" title="ChatApp1" src="https://chat-app-b8cf6.web.app/" frameBorder="0" />
-        <iframe className="shared" title="ChatApp2" src="https://chat-app-b8cf6.web.app/" frameBorder="0" />
+        <iframe className="shared" title="ChatApp1" id="chatApp1" src="https://chat-app-b8cf6.firebaseapp.com/" frameBorder="0" />
+        <iframe className="shared" title="ChatApp2" id="chatApp2" src="https://chat-app-b8cf6.firebaseapp.com/" frameBorder="0" />
       </>
     );
   }

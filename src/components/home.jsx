@@ -33,7 +33,7 @@ const About = () => {
         setThoughtClass('notThought');
         setMarginLeft('3rem');
         setMarginTop(`${-5 + document.querySelector('#root > section > section > section > main').scrollTop / 100}rem`);
-        setHeight(`${130 - (document.querySelector('#root > section > section > section > main').scrollTop) / 12}vh`);
+        setHeight(`${130 - (document.querySelector('#root > section > section > section > main').scrollTop) / 11}vh`);
         setWidth(`${document.getElementsByClassName('infscroll')[0].clientHeight * 1418 / 775 || 0}px`);
         setHeadMarginTop(`${900 - (document.querySelector('#root > section > section > section > main').scrollTop) / 1.67}px`);
       } else if (document.querySelector('#root > section > section > section > main').scrollTop > 1000) {
@@ -210,14 +210,7 @@ const About = () => {
           display: 'flex', alignItems: 'center', width: '100%', justifyContent: 'center',
         }}
         >
-          <img src={require('../assets/html.png')} alt="language icon" style={{ width: '7vw', marginRight: '-1rem' }} />
-          <img src={require('../assets/css.png')} alt="language icon" style={{ width: '11vw' }} />
-          <img src={require('../assets/es6.svg')} alt="language icon" style={{ width: '5.2vw', marginRight: '3rem' }} />
-          <img src={require('../assets/node.png')} alt="language icon" style={{ width: '7vw' }} />
-          <img src={require('../assets/mongodb.png')} alt="language icon" style={{ width: '7vw' }} />
-          <img src={require('../assets/react.png')} alt="language icon" style={{ width: '7vw' }} />
-          <img src={require('../assets/python.jpg')} alt="language icon" style={{ width: '7vw' }} />
-          <img src={require('../assets/express.png')} alt="language icon" style={{ width: '10vw' }} />
+          <img src={require('../assets/all.png')} alt="language icon" style={{ width: '80vw' }} />
         </span>
       </div>
     </div>
@@ -227,92 +220,13 @@ const About = () => {
 export default About;
 
 
-// return (
-//   <div className="mainContent">
-//     <div className="device device-macbook-pro device-spacegray">
-//       <div className="device-frame">
-//         <div
-//           className={className}
-//           style={{ backgroundPositionX: backgroundX }}
-//         />
-//       </div>
-//       <div className="device-stripe" />
-//       <div className="device-header" />
-//       <div className="device-sensors" />
-//       <div className="device-btns" />
-//       <div className="device-power" />
-//     </div>
-//     <div style={{
-//       position: 'sticky', top: '0', width, height,
-//     }}
-//     >
-//       <div
-//         className={className}
-//         style={{ backgroundPositionX: backgroundX }}
-//       />
-//     </div>
-//     <div id="underneath">
-//       <h1 style={{ fontSize: '8rem' }}>Collin Park</h1>
-//       <p>Experience using</p>
-//       <span>
-//         <img src={require('../assets/html.png')} style={{ width: '9rem', marginRight: '-1rem' }} />
-//         <img src={require('../assets/css.png')} style={{ width: '14rem' }} />
-//         <img src={require('../assets/es6.svg')} style={{ width: '6.5rem', marginRight: '3rem' }} />
-//         <img src={require('../assets/node.png')} style={{ width: '10rem' }} />
-//         <img src={require('../assets/mongodb.png')} style={{ width: '10rem' }} />
-//         <img src={require('../assets/react.png')} style={{ width: '10rem' }} />
-//         <img src={require('../assets/python.jpg')} style={{ width: '10rem' }} />
-//       </span>
-//     </div>
-//   </div>
-// );
-
-
-//                <source src="https://storage.googleapis.com/mannequin/blobs/b2f6ec83995556095867d0b055d87230.mp4" type="video/mp4" />
-
-// <video
-//   autoPlay
-//   loop
-//   muted
-//   className="banner__video"
-//   poster="video.jpg"
-//   style={{
-//     size: '100%',
-//     width: '100%',
-//     height: '110%',
-//   }}
-// >
-//   <source src={imgGif} type="video/mp4" />
-
-//   This video is not supported
-// </video>
-
-
-// <video
-//  autoPlay
-//  loop
-//  muted
-//  className="banner__video"
-//  poster="video.jpg"
-//  style={{
-//    size: '100%',
-//    width: '100%',
-//    height: '110%',
-//  }}
-// >
-//  <source src={video} type="video/mp4" />
-
-//  This video is not supported
-// </video>
-
-
-//  <iframe
-//    src="https://www.youtube.com/watch?v=zQdQSQ5BoHM"
-
-//    style={{
-
-//      width: '100%',
-//      height: '100%',
-//      frameBorder: '0',
-//    }}
-//  />
+// <img src={require('../assets/html.png')} alt="language icon" style={{ width: '7vw', marginRight: '-1rem' }} />
+// <img src={require('../assets/css.png')} alt="language icon" style={{ width: '11vw' }} />
+// <img src={require('../assets/es6.svg')} alt="language icon" style={{ width: '5.2vw', marginRight: '3rem' }} />
+// <img src={require('../assets/node.png')} alt="language icon" style={{ width: '7vw' }} />
+// <img src={require('../assets/mongodb.png')} alt="language icon" style={{ width: '7vw' }} />
+// <img src={require('../assets/react.png')} alt="language icon" style={{ width: '7vw' }} />
+// <img src={require('../assets/python.jpg')} alt="language icon" style={{ width: '7vw' }} />
+// <img src={require('../assets/express.png')} alt="language icon" style={{ width: '10vw' }} />
+// <img src={require('../assets/gcp.jpg')} alt="language icon" style={{ width: '10vw' }} />
+// <img src={require('../assets/firebase.png')} alt="language icon" style={{ width: '10vw' }} />
