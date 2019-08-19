@@ -1,8 +1,9 @@
 import React, { memo, useContext, useEffect } from 'react';
 import { Card, Avatar } from 'antd';
-import Context from '../Context';
 import './projects.css';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+import Context from '../Context';
 
 const Project = memo(() => {
   const { Meta } = Card;
@@ -11,6 +12,7 @@ const Project = memo(() => {
 
   useEffect(() => {
     document.querySelector('#root > section > section > section > main').scrollTop = 0;
+    axios.get('https://us-central1-chat-app-b8cf6.cloudfunctions.net/getAllCors').then(r => console.log('evoking cold start', r.data));
   }, []);
 
   const renderProjects = () => projects.map((obj, i) => (

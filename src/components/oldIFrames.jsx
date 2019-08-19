@@ -4,9 +4,9 @@ import './oldIFrames.css';
 const OldIFrames = ({ match }) => {
   const [width, setWidth] = useState('100%');
   useEffect(() => {
-    window.addEventListener('message', (a) => {
-      console.log(a.data);
-    });
+    // window.addEventListener('message', (a) => {
+    //   // console.log(a.data);
+    // });
   }, []);
 
   const changeWidth = () => {

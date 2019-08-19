@@ -10,30 +10,30 @@ const About = () => {
   }, []);
   // const [className, setClassName] = useState('infscroll');
   const [width, setWidth] = useState('120vw');
+  const [vidWidth, setvidWidth] = useState('100%');
   const [marginTop, setMarginTop] = useState('-5rem');
-  const [marginLeft, setMarginLeft] = useState('3rem');
+  const [marginLeft, setMarginLeft] = useState('8vw');
   const [height, setHeight] = useState('130vh');
   const [headMarginTop, setHeadMarginTop] = useState('900px');
   const [thoughtClass, setThoughtClass] = useState('notThought');
   const [downArrow, setDownArrow] = useState('downArrow');
-  const [scrollColor, setScrollColor] = useState('white');
   const [opacity, setOpacity] = useState(1);
   const laptopScrollEvent = () => {
     setTimeout(() => {
       // console.log(document.querySelector('#root > section > section > section > main').scrollTop);
-      if (document.querySelector('#root > section > section > section > main').scrollTop < 1) {
-        setScrollColor('white');
+      if (document.querySelector('#root > section > section > section > main').scrollTop < -1) {
+        setvidWidth('100%');
         setDownArrow('downArrow');
-        setMarginLeft('3rem');
+        setMarginLeft('8vw');
       } else if (document.querySelector('#root > section > section > section > main').scrollTop <= 1000
       && document.querySelector('#root > section > section > section > main').scrollTop > 1) {
+        setvidWidth('100%');
         setOpacity(1);
-        setScrollColor('grey');
         setDownArrow('downArrow');
         setThoughtClass('notThought');
-        setMarginLeft('3rem');
+        setMarginLeft('8vw');
         setMarginTop(`${-5 + document.querySelector('#root > section > section > section > main').scrollTop / 100}rem`);
-        setHeight(`${130 - (document.querySelector('#root > section > section > section > main').scrollTop) / 11}vh`);
+        setHeight(`${130 - (document.querySelector('#root > section > section > section > main').scrollTop) / 13}vh`);
         setWidth(`${document.getElementsByClassName('infscroll')[0].clientHeight * 1418 / 775 || 0}px`);
         setHeadMarginTop(`${900 - (document.querySelector('#root > section > section > section > main').scrollTop) / 1.67}px`);
       } else if (document.querySelector('#root > section > section > section > main').scrollTop > 1000) {
@@ -47,6 +47,7 @@ const About = () => {
 
   useEffect(() => {
     document.querySelector('#root > section > section > section > main').addEventListener('scroll', laptopScrollEvent);
+    document.querySelector('#root > section > section > section > main').scrollTop = 2;
     return () => {
       document.querySelector('#root > section > section > section > main').removeEventListener('scroll', laptopScrollEvent);
     };
@@ -63,14 +64,12 @@ const About = () => {
         left: 0,
         behavior: 'smooth',
       });
-      setScrollColor('black');
     } else {
       document.querySelector('#root > section > section > section > main').scroll({
         top: 1800,
         left: 0,
         behavior: 'smooth',
       });
-      setScrollColor('black');
     }
     console.log(document.querySelector('#root > section > section > section > main').scrollTop);
   };
@@ -87,11 +86,11 @@ const About = () => {
       }}
     >
 
-      <span className={downArrow} onClick={scrollDown}>
-        <p style={{
-          marginTop: '-47px', fontSize: '2rem', color: scrollColor, zIndex: 15,
-        }}
-        >
+      <span
+        className={downArrow}
+        onClick={scrollDown}
+      >
+        <p>
           {/* Scroll */}
 
         </p>
@@ -144,7 +143,7 @@ const About = () => {
                 muted
                 className="banner__video"
                 poster="video.jpg"
-                style={{ width: '100%' }}
+                style={{ width: vidWidth }}
               >
                 <source src="https://firebasestorage.googleapis.com/v0/b/first-js-project-c5a77.appspot.com/o/landingMov.mp4?alt=media&token=e140ed1b-f9b2-4d7e-b3e9-64d98aa3a28e" type="video/mp4" />
               </video>

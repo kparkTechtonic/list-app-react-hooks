@@ -57,12 +57,12 @@
 }
 
 @media only screen and (max-width: 800px) {
-  .mainContent{
+  /* .mainContent{
     margin-left:0 !important;
   }
   .ant-layout{
     margin-left:0 ;
-  }
+  } */
 
 
   aside.ant-layout-sider.ant-layout-sider-dark{
