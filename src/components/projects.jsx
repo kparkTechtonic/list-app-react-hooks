@@ -13,6 +13,7 @@ const Project = memo(() => {
   useEffect(() => {
     document.querySelector('#root > section > section > section > main').scrollTop = 0;
     axios.get('https://us-central1-chat-app-b8cf6.cloudfunctions.net/getAllCors').then(r => console.log('evoking cold start', r.data));
+    axios.get('https://us-central1-chat-app-b8cf6.cloudfunctions.net/addComment').then(r => console.log('evoking cold start', r.data)).catch(err => console.log(err));
   }, []);
 
   const renderProjects = () => projects.map((obj, i) => (
