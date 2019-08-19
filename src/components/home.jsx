@@ -21,7 +21,7 @@ const About = () => {
   const laptopScrollEvent = () => {
     setTimeout(() => {
       // console.log(document.querySelector('#root > section > section > section > main').scrollTop);
-      if (document.querySelector('#root > section > section > section > main').scrollTop < -1) {
+      if (document.querySelector('#root > section > section > section > main').scrollTop < 1) {
         setvidWidth('100%');
         setDownArrow('downArrow');
         setMarginLeft('8vw');
@@ -47,7 +47,7 @@ const About = () => {
 
   useEffect(() => {
     document.querySelector('#root > section > section > section > main').addEventListener('scroll', laptopScrollEvent);
-    document.querySelector('#root > section > section > section > main').scrollTop = 2;
+    document.querySelector('#root > section > section > section > main').scrollTop = 5;
     return () => {
       document.querySelector('#root > section > section > section > main').removeEventListener('scroll', laptopScrollEvent);
     };

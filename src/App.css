@@ -63,6 +63,11 @@
   .ant-layout{
     margin-left:0 ;
   } */
+  #myChart{
+    height:40vh !important;
+    width:105vw !important;
+  }
+
 
 
   aside.ant-layout-sider.ant-layout-sider-dark{
