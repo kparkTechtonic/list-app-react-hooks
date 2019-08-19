@@ -2,36 +2,38 @@ import React, { useEffect, useState } from 'react';
 import './about.css';
 import '../devices.css';
 import './home.css';
-import video from '../assets/landingMov.mp4';
 import head from '../assets/back.png';
 
 const About = () => {
+  useEffect(() => {
+    document.querySelector('#root > section > section > section > main').scrollTop = 0;
+  }, []);
   // const [className, setClassName] = useState('infscroll');
-  const [width, setWidth] = useState('2400px');
+  const [width, setWidth] = useState('120vw');
+  const [vidWidth, setvidWidth] = useState('100%');
   const [marginTop, setMarginTop] = useState('-5rem');
-  const [marginLeft, setMarginLeft] = useState('3rem');
-  const [height, setHeight] = useState('110vh');
+  const [marginLeft, setMarginLeft] = useState('8vw');
+  const [height, setHeight] = useState('130vh');
   const [headMarginTop, setHeadMarginTop] = useState('900px');
   const [thoughtClass, setThoughtClass] = useState('notThought');
   const [downArrow, setDownArrow] = useState('downArrow');
-  const [scrollColor, setScrollColor] = useState('white');
   const [opacity, setOpacity] = useState(1);
   const laptopScrollEvent = () => {
     setTimeout(() => {
-      console.log(document.querySelector('#root > section > section > section > main').scrollTop);
+      // console.log(document.querySelector('#root > section > section > section > main').scrollTop);
       if (document.querySelector('#root > section > section > section > main').scrollTop < 1) {
-        setScrollColor('white');
+        setvidWidth('100%');
         setDownArrow('downArrow');
-        setMarginLeft('3rem');
+        setMarginLeft('8vw');
       } else if (document.querySelector('#root > section > section > section > main').scrollTop <= 1000
       && document.querySelector('#root > section > section > section > main').scrollTop > 1) {
+        setvidWidth('100%');
         setOpacity(1);
-        setScrollColor('grey');
         setDownArrow('downArrow');
         setThoughtClass('notThought');
-        setMarginLeft('3rem');
+        setMarginLeft('8vw');
         setMarginTop(`${-5 + document.querySelector('#root > section > section > section > main').scrollTop / 100}rem`);
-        setHeight(`${110 - (document.querySelector('#root > section > section > section > main').scrollTop) / 20}vh`);
+        setHeight(`${130 - (document.querySelector('#root > section > section > section > main').scrollTop) / 13}vh`);
         setWidth(`${document.getElementsByClassName('infscroll')[0].clientHeight * 1418 / 775 || 0}px`);
         setHeadMarginTop(`${900 - (document.querySelector('#root > section > section > section > main').scrollTop) / 1.67}px`);
       } else if (document.querySelector('#root > section > section > section > main').scrollTop > 1000) {
@@ -45,6 +47,7 @@ const About = () => {
 
   useEffect(() => {
     document.querySelector('#root > section > section > section > main').addEventListener('scroll', laptopScrollEvent);
+    document.querySelector('#root > section > section > section > main').scrollTop = 5;
     return () => {
       document.querySelector('#root > section > section > section > main').removeEventListener('scroll', laptopScrollEvent);
     };
@@ -61,14 +64,12 @@ const About = () => {
         left: 0,
         behavior: 'smooth',
       });
-      setScrollColor('black');
     } else {
       document.querySelector('#root > section > section > section > main').scroll({
         top: 1800,
         left: 0,
         behavior: 'smooth',
       });
-      setScrollColor('black');
     }
     console.log(document.querySelector('#root > section > section > section > main').scrollTop);
   };
@@ -85,11 +86,11 @@ const About = () => {
       }}
     >
 
-      <span className={downArrow} onClick={scrollDown}>
-        <p style={{
-          marginTop: '-47px', marginLeft: '-17px', fontSize: '2rem', color: scrollColor, zIndex: 15,
-        }}
-        >
+      <span
+        className={downArrow}
+        onClick={scrollDown}
+      >
+        <p>
           {/* Scroll */}
 
         </p>
@@ -142,16 +143,11 @@ const About = () => {
                 muted
                 className="banner__video"
                 poster="video.jpg"
-                style={{
-                  size: '100%',
-                  width: '100%',
-                  height: '110%',
-                }}
+                style={{ width: vidWidth }}
               >
-                <source src={video} type="video/mp4" />
-
-                This video is not supported
+                <source src="https://firebasestorage.googleapis.com/v0/b/first-js-project-c5a77.appspot.com/o/landingMov.mp4?alt=media&token=e140ed1b-f9b2-4d7e-b3e9-64d98aa3a28e" type="video/mp4" />
               </video>
+
             </div>
 
           </div>
@@ -213,14 +209,7 @@ const About = () => {
           display: 'flex', alignItems: 'center', width: '100%', justifyContent: 'center',
         }}
         >
-          <img src={require('../assets/html.png')} alt="language icon" style={{ width: '7vw', marginRight: '-1rem' }} />
-          <img src={require('../assets/css.png')} alt="language icon" style={{ width: '11vw' }} />
-          <img src={require('../assets/es6.svg')} alt="language icon" style={{ width: '5.2vw', marginRight: '3rem' }} />
-          <img src={require('../assets/node.png')} alt="language icon" style={{ width: '7vw' }} />
-          <img src={require('../assets/mongodb.png')} alt="language icon" style={{ width: '7vw' }} />
-          <img src={require('../assets/react.png')} alt="language icon" style={{ width: '7vw' }} />
-          <img src={require('../assets/python.jpg')} alt="language icon" style={{ width: '7vw' }} />
-          <img src={require('../assets/express.png')} alt="language icon" style={{ width: '10vw' }} />
+          <img src={require('../assets/all.png')} alt="language icon" style={{ width: '80vw' }} />
         </span>
       </div>
     </div>
@@ -230,62 +219,13 @@ const About = () => {
 export default About;
 
 
-// return (
-//   <div className="mainContent">
-//     <div className="device device-macbook-pro device-spacegray">
-//       <div className="device-frame">
-//         <div
-//           className={className}
-//           style={{ backgroundPositionX: backgroundX }}
-//         />
-//       </div>
-//       <div className="device-stripe" />
-//       <div className="device-header" />
-//       <div className="device-sensors" />
-//       <div className="device-btns" />
-//       <div className="device-power" />
-//     </div>
-//     <div style={{
-//       position: 'sticky', top: '0', width, height,
-//     }}
-//     >
-//       <div
-//         className={className}
-//         style={{ backgroundPositionX: backgroundX }}
-//       />
-//     </div>
-//     <div id="underneath">
-//       <h1 style={{ fontSize: '8rem' }}>Collin Park</h1>
-//       <p>Experience using</p>
-//       <span>
-//         <img src={require('../assets/html.png')} style={{ width: '9rem', marginRight: '-1rem' }} />
-//         <img src={require('../assets/css.png')} style={{ width: '14rem' }} />
-//         <img src={require('../assets/es6.svg')} style={{ width: '6.5rem', marginRight: '3rem' }} />
-//         <img src={require('../assets/node.png')} style={{ width: '10rem' }} />
-//         <img src={require('../assets/mongodb.png')} style={{ width: '10rem' }} />
-//         <img src={require('../assets/react.png')} style={{ width: '10rem' }} />
-//         <img src={require('../assets/python.jpg')} style={{ width: '10rem' }} />
-//       </span>
-//     </div>
-//   </div>
-// );
-
-
-//                <source src="https://storage.googleapis.com/mannequin/blobs/b2f6ec83995556095867d0b055d87230.mp4" type="video/mp4" />
-
-// <video
-//   autoPlay
-//   loop
-//   muted
-//   className="banner__video"
-//   poster="video.jpg"
-//   style={{
-//     size: '100%',
-//     width: '100%',
-//     height: '110%',
-//   }}
-// >
-//   <source src={imgGif} type="video/mp4" />
-
-//   This video is not supported
-// </video>
+// <img src={require('../assets/html.png')} alt="language icon" style={{ width: '7vw', marginRight: '-1rem' }} />
+// <img src={require('../assets/css.png')} alt="language icon" style={{ width: '11vw' }} />
+// <img src={require('../assets/es6.svg')} alt="language icon" style={{ width: '5.2vw', marginRight: '3rem' }} />
+// <img src={require('../assets/node.png')} alt="language icon" style={{ width: '7vw' }} />
+// <img src={require('../assets/mongodb.png')} alt="language icon" style={{ width: '7vw' }} />
+// <img src={require('../assets/react.png')} alt="language icon" style={{ width: '7vw' }} />
+// <img src={require('../assets/python.jpg')} alt="language icon" style={{ width: '7vw' }} />
+// <img src={require('../assets/express.png')} alt="language icon" style={{ width: '10vw' }} />
+// <img src={require('../assets/gcp.jpg')} alt="language icon" style={{ width: '10vw' }} />
+// <img src={require('../assets/firebase.png')} alt="language icon" style={{ width: '10vw' }} />

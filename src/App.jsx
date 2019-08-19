@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
+// import axios from 'axios';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import {
   Layout, Menu, Icon,
@@ -9,6 +9,7 @@ import './App.css';
 import Maindisplay from './components/Maindisplay';
 import Form from './components/Form';
 import Calculator from './components/calculator';
+import Chart from './components/Chart';
 import OldIFrames from './components/oldIFrames';
 import Project from './components/projects';
 import About from './components/about';
@@ -19,7 +20,7 @@ const { Header, Content, Sider } = Layout;
 const url = window.location.pathname;
 
 const App = () => {
-  const [data, setData] = useState('');
+  const [data] = useState('');
   const [formData, setFormData] = useState({});
   const [horizontalNav, setHorizontalNav] = useState(
     url === '/' ? '1'
@@ -44,49 +45,26 @@ const App = () => {
     { title: 'Library', description: 'Using DOM event', port: 4000 },
     { title: 'Calculator', description: 'Using React', port: 6000 },
     { title: 'ChatApp', description: 'Using express, mongo & SSE', port: 7000 },
+    { title: 'Chart', description: 'Using chart.js', port: 7000 },
+
   ]);
 
-  useEffect(() => {
-    async function fetchData() {
-      const response = await axios.get('http://localhost:3002/list/').then((r) => {
-        // console.log(r.data);
-        setData(r.data);
-        return r.data;
-      });
-      return response;
-    }
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   // async function fetchData() {
+  //   //   const response = await axios.get('http://localhost:3002/list/').then((r) => {
+  //   //     // console.log(r.data);
+  //   //     setData(r.data);
+  //   //     return r.data;
+  //   //   });
+  //   //   return response;
+  //   // }
+  //   // fetchData();
+  // }, []);
 
 
   const updateHighlight = () => {
     setHorizontalNav('2');
   };
-
-
-  // const updateHorizontalNav = () => {
-  //   url === '/' ? horizontalStoredNavKey = '1'
-  //     : url === '/project' ? horizontalStoredNavKey = '2'
-  //       : url === '/About' ? horizontalStoredNavKey = '3'
-  //         : url === '/OldIFrames/CarDealership' ? horizontalStoredNavKey = '2'
-  //           : url === '/OldIFrames/TeslaWebsite' ? horizontalStoredNavKey = '2'
-  //             : url === '/OldIFrames/Library' ? horizontalStoredNavKey = '2'
-  //               : url === '/Calculator' ? horizontalStoredNavKey = '2'
-  //                 : horizontalStoredNavKey = '';
-  // };
-
-  // const updateVerticalNav = () => {
-  //   url === '/OldIFrames/CarDealership' ? verticalStoredNavKey = '1'
-  //     : url === '/OldIFrames/TeslaWebsite' ? verticalStoredNavKey = '2'
-  //       : url === '/OldIFrames/Library' ? verticalStoredNavKey = '3'
-  //         : url === '/Calculator' ? verticalStoredNavKey = '4'
-  //           : verticalStoredNavKey = '';
-  // };
-
-  // useEffect(() => {
-  // //   updateHorizontalNav();
-  // //   updateVerticalNav();
-  // });
 
   return (
     <Context.Provider
@@ -122,68 +100,19 @@ const App = () => {
             </Menu>
           </Header>
           <Layout>
-            <Sider width={200} style={{ background: '#fff' }}>
-              <Menu
-                mode="inline"
-                defaultSelectedKeys={[verticalNav]}
-                style={{
-                  height: '95vh',
-                  borderRight: 0,
-                  overflow: 'scroll',
-                }}
-              >
-                <SubMenu
-                  key="sub1"
-                  title={(
-                    <span>
-                      <Icon type="user" />
-Earlier projects
 
-                    </span>
-                  )}
-                >
-                  <Menu.Item key="1">
-                    <Link to="/OldIFrames/CarDealership">
-                    CarDealership
-                    </Link>
-                  </Menu.Item>
-                  <Menu.Item key="2">
-                    <Link to="/OldIFrames/TeslaWebsite">
-                    Tesla website
-                    </Link>
-                  </Menu.Item>
-                  <Menu.Item key="3">
-                    <Link to="/OldIFrames/Library">
-                    Library
-                    </Link>
-                  </Menu.Item>
-                  <Menu.Item key="4" onClick={updateHighlight}>
-                    <Link to="/Calculator">
-                    Calculator
-                    </Link>
-                  </Menu.Item>
-                  <Menu.Item key="5">
-                    <Link to="/OldIFrames/ChatApp">
-                    Chat App
-                    </Link>
-                  </Menu.Item>
-                </SubMenu>
-
-
-              </Menu>
-            </Sider>
-            <Layout style={{ padding: '0 24px 24px' }}>
+            <Layout style={{ marginTop: '64px' }}>
               <Content
                 style={{
                   background: '#fff',
                   minHeight: 280,
-                  width: '85vw',
                 }}
               >
                 <Route exact path="/" component={Home} />
                 <Route path="/display" component={Maindisplay} />
                 <Route path="/form" component={Form} />
                 <Route path="/Calculator" component={Calculator} />
+                <Route path="/Chart" component={Chart} />
                 <Route path="/OldIFrames/:id" component={OldIFrames} />
                 <Route path="/project" component={Project} />
                 <Route path="/About" component={About} />
@@ -230,3 +159,63 @@ export default App;
 //  </Menu.Item>
 //  {populateNav()}
 // </SubMenu>
+
+
+//    <Sider
+//              id="none"
+//              style={{ background: '#fff' }}
+//            //>
+//              <Menu
+//                //mode="inline"
+//                //defaultSelectedKeys={[verticalNav]}
+//                //style={{
+//                  height: '95vh',
+//                  borderRight: 0,
+//                  overflow: 'scroll',
+//                //}}
+//              >
+//                //<SubMenu
+//                  key="sub1"
+//                  title={(
+//                    //<span>
+//                      <Icon type="user" />
+//      Earlier projects
+
+//                    //</span>
+//                  )}
+//                //>
+//                  <Menu.Item key="1">
+//                    //<Link to="/OldIFrames/CarDealership">
+//                    //CarDealership
+//                    //</Link>
+//                  </Menu.Item>
+//                  <Menu.Item key="2">
+//                    //<Link to="/OldIFrames/TeslaWebsite">
+//                    //Tesla website
+//                    //</Link>
+//                  </Menu.Item>
+//                  <Menu.Item key="3">
+//                    //<Link to="/OldIFrames/Library">
+//                    //Library
+//                    //</Link>
+//                  </Menu.Item>
+//                  <Menu.Item key="4" onClick={updateHighlight}>
+//                    //<Link to="/Calculator">
+//                    //Calculator
+//                    //</Link>
+//                  </Menu.Item>
+//                  <Menu.Item key="5">
+//                    //<Link to="/OldIFrames/ChatApp">
+//                    //Chat App
+//                    //</Link>
+//                  </Menu.Item>
+//                  <Menu.Item key="6">
+//                    //<Link to="/Chart">
+//                    //Chart
+//                    //</Link>
+//                  </Menu.Item>
+//                //</SubMenu>
+
+
+//              </Menu>
+//            </Sider>

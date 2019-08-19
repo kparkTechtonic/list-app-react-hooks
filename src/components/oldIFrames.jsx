@@ -4,9 +4,9 @@ import './oldIFrames.css';
 const OldIFrames = ({ match }) => {
   const [width, setWidth] = useState('100%');
   useEffect(() => {
-    window.addEventListener('message', (a) => {
-      console.log(a.data);
-    });
+    // window.addEventListener('message', (a) => {
+    //   // console.log(a.data);
+    // });
   }, []);
 
   const changeWidth = () => {
@@ -20,7 +20,7 @@ const OldIFrames = ({ match }) => {
 
   if (match.params.id === 'CarDealership') {
     return (
-      <iframe title="CarDealership" src="http://127.0.0.1:5500/index.html" frameBorder="0" />);
+      <iframe title="CarDealership" src="https://carconsoleapp.web.app/?dealershipName=asdf&startingFunds=123123123" frameBorder="0" />);
   }
   if (match.params.id === 'TeslaWebsite') {
     return (
@@ -28,24 +28,26 @@ const OldIFrames = ({ match }) => {
         position: 'relative', height: '100%', width, display: 'flex', flexDirection: 'row',
       }}
       >
-        <iframe title="TeslaWebsite" src="http://127.0.0.1:4500/index.html" frameBorder="0" />
-        <button onClick={changeWidth}>{width === '100%' ? '< Click to resize' : 'Click to resize >'}</button>
+        <iframe title="TeslaWebsite" src="https://tesla-website-recreation.web.app/" frameBorder="0" />
+        <button id="resize" onClick={changeWidth}>{width === '100%' ? '< Click to resize' : 'Click to resize >'}</button>
       </div>
     );
   }
   if (match.params.id === 'Library') {
     return (
-      <iframe title="Library" src="http://127.0.0.1:4000/index.html" frameBorder="0" />);
+      <iframe title="Library" src="https://library-phase-one.firebaseapp.com/" frameBorder="0" />);
   }
 
   if (match.params.id === 'ChatApp') {
     return (
       <>
-        <iframe className="shared" title="ChatApp1" src="http://127.0.0.1:7000/cb-frontend/index.html" frameBorder="0" />
-        <iframe className="shared" title="ChatApp2" src="http://127.0.0.1:7000/cb-frontend/index.html" frameBorder="0" />
+        <iframe className="shared" title="ChatApp1" id="chatApp1" src="https://chat-app-b8cf6.firebaseapp.com/" frameBorder="0" />
+        <iframe className="shared" title="ChatApp2" id="chatApp2" src="https://chat-app-b8cf6.firebaseapp.com/" frameBorder="0" />
       </>
     );
   }
+
+
   return (<>nothing matched</>);
 };
 
