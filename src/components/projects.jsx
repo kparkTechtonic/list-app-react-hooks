@@ -17,13 +17,13 @@ const Project = memo(() => {
   }, []);
 
   const renderProjects = () => projects.map((obj, i) => (
-    <Link key={i + obj.title} to={(obj.title === 'Calculator') ? '/Calculator' : (obj.title === 'Chart') ? '/Chart' : `/OldIFrames/${obj.title}`}>
+    <Link key={i + obj.title} to={(obj.title === 'Calculator') ? '/Calculator' : (obj.title === 'Chart') ? '/Chart' : (obj.title === 'MachineLearning') ? '/MachineLearning' : `/OldIFrames/${obj.title}`}>
       <Card
         style={{
           width: '300px', Height: '900px', marginRight: '15px', display: 'inline-block',
         }}
         cover={(
-          <img alt={obj.title} src={require(`../assets/${obj.title}.png`)} />
+          <img alt={obj.title} style={{ height: '200px', width: '300px' }} src={require(`../assets/${obj.title}.png`)} />
         )}
       >
         <Meta

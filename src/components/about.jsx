@@ -157,7 +157,6 @@ to be consumed with the
       </Paragraph>
 
       <Divider />
-
     </Typography>
   );
 };

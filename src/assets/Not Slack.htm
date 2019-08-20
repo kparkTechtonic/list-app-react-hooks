@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)http://127.0.0.1:5501/cb-frontend/? -->
+<html lang="en" class="mdl-js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Not Slack</title>
+  <link rel="stylesheet" href="./Not Slack_files/styles.css">
+  <link type="text/css" rel="stylesheet" href="./Not Slack_files/firebaseui.css">
+  <script src="./Not Slack_files/firebaseui.js"></script>
+  <script defer="" src="./Not Slack_files/firebase-auth.js"></script>
+  <script type="text/javascript">// FirebaseUI config.
+    var uiConfig = {
+          signInSuccessUrl: '<url-to-redirect-to-on-success>',
+          signInOptions: [
+            // Leave the lines as is for the providers you want to offer your users.
+            firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+            firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+            firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+            firebase.auth.GithubAuthProvider.PROVIDER_ID,
+            firebase.auth.EmailAuthProvider.PROVIDER_ID,
+            firebase.auth.PhoneAuthProvider.PROVIDER_ID,
+            firebaseui.auth.AnonymousAuthProvider.PROVIDER_ID
+          ],
+          // tosUrl and privacyPolicyUrl accept either url string or a callback
+          // function.
+          // Terms of service url/callback.
+          tosUrl: '<your-tos-url>',
+          // Privacy policy url/callback.
+          privacyPolicyUrl: function() {
+            window.location.assign('<your-privacy-policy-url>');
+          }
+        };
+    
+        // Initialize the FirebaseUI Widget using Firebase.
+        var ui = new firebaseui.auth.AuthUI(firebase.auth());
+        // The start method will wait until the DOM is loaded.
+        ui.start('#firebaseui-auth-container', uiConfig);</script>
+</head>
+<body>
+  <div class="thread-container">
+    <div class="fakecard"></div>
+    <div class="fakecard"></div>
+    <div class="card" id="toggled">general</div>
+    <!-- <div class="card">cars</div>
+    <div class="card">horses</div>
+    <div class="card">elephants</div> -->
+  </div>
+  <div class="nav-container">
+    <div class="logo">
+    </div>
+    <div class="username">
+      <h1 id="userID">Chat name</h1>
+      <form>
+        <input type="text" value="Chat name" id="userIDInput"> 
+        <button id="userIDButton">set name</button>
+      </form>
+    </div>
+    <div>
+      <ul>
+        <li>
+            </li><li class="firebaseui-list-item"><button id="myBtn" class="firebaseui-idp-button mdl-button mdl-js-button mdl-button--raised firebaseui-idp-password firebaseui-id-idp-button" data-provider-id="password" style="background-color:" data-upgraded=",MaterialButton"><span class="firebaseui-idp-icon-wrapper"><img class="firebaseui-idp-icon" alt="" src="./Not Slack_files/mail.svg"></span><span class="firebaseui-idp-text firebaseui-idp-text-long">Sign in with email</span><span class="firebaseui-idp-text firebaseui-idp-text-short">Email</span></button></li>
+        
+    </ul>
+  </div>
+  </div>
+  <div class="main-container">
+    <div id="main-text"><div class="commentbox" id="1566019327026"><img src="./Not Slack_files/portrait.png"><div class="secondaryDiv"><p class="author" authorid="Admin" id="0">Admin<span class="commentTime"> 23:22:7</span></p><p class="commentText">This channel is for discussing anything</p></div><div id="buttonDiv"><div class="dropdown"><button class="dropbtn">translate</button><div class="dropdown-content"><a>Korean</a><a>Hindi</a><a>French</a><a>Russian</a></div></div><button>delete</button><button>edit</button></div></div><div class="commentbox" id="1566019335727"><img src="./Not Slack_files/portrait.png" class="fakeimg"><div class="secondaryDivAlt"><p class="commentText">the other channels are currently down for maintenance</p><p class="author" authorid="Admin" id="1"><span class="commentTime"> 23:22:15</span></p></div><div id="buttonDiv"><div class="dropdown"><button class="dropbtn">translate</button><div class="dropdown-content"><a>Korean</a><a>Hindi</a><a>French</a><a>Russian</a></div></div><button>delete</button><button>edit</button></div></div><div class="commentbox" id="1566020422300"><img src="./Not Slack_files/portrait.png"><div class="secondaryDiv"><p class="author" authorid="Test" id="2">Test<span class="commentTime"> 23:40:22</span></p><p class="commentText">migrated from express + mongoDB to google serverless functions + firestore </p></div><div id="buttonDiv"><div class="dropdown"><button class="dropbtn">translate</button><div class="dropdown-content"><a>Korean</a><a>Hindi</a><a>French</a><a>Russian</a></div></div><button>delete</button><button>edit</button></div></div><div class="commentbox" id="1566026732876"><img src="./Not Slack_files/portrait.png"><div class="secondaryDiv"><p class="author" authorid="Collin" id="3">Collin<span class="commentTime"> 1:25:32</span></p><p class="commentText">I like serverless functions! </p></div><div id="buttonDiv"><div class="dropdown"><button class="dropbtn">translate</button><div class="dropdown-content"><a>Korean</a><a>Hindi</a><a>French</a><a>Russian</a></div></div><button>delete</button><button>edit</button></div></div><div class="commentbox" id="1566026752189"><img src="./Not Slack_files/portrait.png" class="fakeimg"><div class="secondaryDivAlt"><p class="commentText">the onsnapshot triggers are also very cool!</p><p class="author" authorid="Collin" id="4"><span class="commentTime"> 1:25:52</span></p></div><div id="buttonDiv"><div class="dropdown"><button class="dropbtn">translate</button><div class="dropdown-content"><a>Korean</a><a>Hindi</a><a>French</a><a>Russian</a></div></div><button>delete</button><button>edit</button></div></div><div class="commentbox" id="1566026764551"><img src="./Not Slack_files/portrait.png" class="fakeimg"><div class="secondaryDivAlt"><p class="commentText">triggers for the firestore^ that is</p><p class="author" authorid="Collin" id="5"><span class="commentTime"> 1:26:4</span></p></div><div id="buttonDiv"><div class="dropdown"><button class="dropbtn">translate</button><div class="dropdown-content"><a>Korean</a><a>Hindi</a><a>French</a><a>Russian</a></div></div><button>delete</button><button>edit</button></div></div><div class="commentbox" id="1566180596225"><img src="./Not Slack_files/portrait.png" class="fakeimg"><div class="secondaryDivAlt"><p class="commentText">serverless functions were extra, but setting up cors, and endpoints was an interesting experience, I hear lambda functions offered by AWS may have better integration with higher end services</p><p class="author" authorid="Collin" id="6"><span class="commentTime"> 20:9:56</span></p></div><div id="buttonDiv"><div class="dropdown"><button class="dropbtn">translate</button><div class="dropdown-content"><a>Korean</a><a>Hindi</a><a>French</a><a>Russian</a></div></div><button>delete</button><button>edit</button></div></div></div>
+    <div id="input">
+      <form>
+        <input type="text">
+        <button id="text-input">send</button>
+      </form>
+    </div>
+  </div>
+  <div id="myModal" class="modal" style="display: none;">
+
+      <div class="modal-content" id="firebaseui-container" lang="en"><div class="mdl-card mdl-shadow--2dp firebaseui-container firebaseui-id-page-sign-in"><form onsubmit="return false;"><div class="firebaseui-card-header"><h1 class="firebaseui-title">Sign in with email</h1></div><div class="firebaseui-card-content"><div class="firebaseui-relative-wrapper"><div class="firebaseui-textfield mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-upgraded" data-upgraded=",MaterialTextfield"><label class="mdl-textfield__label firebaseui-label" for="email">Email</label><input type="email" name="email" autocomplete="username" class="mdl-textfield__input firebaseui-input firebaseui-id-email" value=""></div><div class="firebaseui-error-wrapper"><p class="firebaseui-error firebaseui-text-input-error firebaseui-hidden firebaseui-id-email-error"></p></div></div></div><div class="firebaseui-card-actions"><div class="firebaseui-form-actions"><button class="firebaseui-id-secondary-link firebaseui-button mdl-button mdl-js-button mdl-button--primary close" data-upgraded=",MaterialButton">Cancel</button><button type="submit" class="firebaseui-id-submit firebaseui-button mdl-button mdl-js-button mdl-button--raised mdl-button--colored" data-upgraded=",MaterialButton">Next</button></div></div><div class="firebaseui-card-footer"><ul class="firebaseui-tos-list firebaseui-tos"><li class="firebaseui-inline-list-item"><a href="javascript:void(0)" class="firebaseui-link firebaseui-tos-link" target="_blank">Terms of Service</a></li><li class="firebaseui-inline-list-item"><a href="javascript:void(0)" class="firebaseui-link firebaseui-pp-link" target="_blank">Privacy Policy</a></li></ul></div></form></div></div>
+    
+    </div>
+  <script src="./Not Slack_files/firebase-app.js"></script>
+  <script src="./Not Slack_files/firebase-firestore.js"></script>
+  <script src="./Not Slack_files/axios.min.js"></script>
+  <script src="./Not Slack_files/index.js"></script>
+  <script>
+      function showDialog() {
+            var dialog = document.getElementById('window');
+            dialog.show();
+      }
+</script>
+<!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+</body></html>

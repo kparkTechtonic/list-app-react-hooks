@@ -5,3 +5,8 @@
 .chartjs-size-monitor{
   width:10%
 }
+@media only screen and (max-width: 800px) {
+  #myChart{
+    height:50vh !important;
+  }
+}

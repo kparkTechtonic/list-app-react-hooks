@@ -2,21 +2,21 @@ import React, { useState } from 'react';
 // import axios from 'axios';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import {
-  Layout, Menu, Icon,
+  Layout, Menu,
 } from 'antd';
 import Context from './Context';
 import './App.css';
 import Maindisplay from './components/Maindisplay';
 import Form from './components/Form';
 import Calculator from './components/calculator';
+import ml5 from './components/ml5.jsx';
 import Chart from './components/Chart';
 import OldIFrames from './components/oldIFrames';
 import Project from './components/projects';
 import About from './components/about';
 import Home from './components/home';
 
-const { SubMenu } = Menu;
-const { Header, Content, Sider } = Layout;
+const { Header, Content } = Layout;
 const url = window.location.pathname;
 
 const App = () => {
@@ -32,20 +32,14 @@ const App = () => {
                 : url === '/Calculator' ? '2'
                   : '',
   );
-  const [verticalNav] = useState(
-    url === '/OldIFrames/CarDealership' ? '1'
-      : url === '/OldIFrames/TeslaWebsite' ? '2'
-        : url === '/OldIFrames/Library' ? '3'
-          : url === '/Calculator' ? '4'
-            : '',
-  );
   const [projects] = useState([
-    { title: 'CarDealership', description: 'Using vanilla JS', port: 5500 },
-    { title: 'TeslaWebsite', description: 'html/CSS, mobile responsive', port: 4500 },
-    { title: 'Library', description: 'Using DOM event', port: 4000 },
-    { title: 'Calculator', description: 'Using React', port: 6000 },
-    { title: 'ChatApp', description: 'Using express, mongo & SSE', port: 7000 },
-    { title: 'Chart', description: 'Using chart.js', port: 7000 },
+    { title: 'CarDealership', description: 'Using vanilla JS' },
+    { title: 'TeslaWebsite', description: 'html/CSS, mobile responsive' },
+    { title: 'Library', description: 'Using DOM event' },
+    { title: 'Calculator', description: 'Using React' },
+    { title: 'ChatApp', description: 'Using express, mongo & SSE' },
+    { title: 'Chart', description: 'Using chart.js' },
+    { title: 'MachineLearning', description: 'Using ml5, p5 and tensorflow.js' },
 
   ]);
 
@@ -61,10 +55,6 @@ const App = () => {
   //   // fetchData();
   // }, []);
 
-
-  const updateHighlight = () => {
-    setHorizontalNav('2');
-  };
 
   return (
     <Context.Provider
@@ -112,6 +102,7 @@ const App = () => {
                 <Route path="/display" component={Maindisplay} />
                 <Route path="/form" component={Form} />
                 <Route path="/Calculator" component={Calculator} />
+                <Route path="/MachineLearning" component={ml5} />
                 <Route path="/Chart" component={Chart} />
                 <Route path="/OldIFrames/:id" component={OldIFrames} />
                 <Route path="/project" component={Project} />

@@ -75,7 +75,8 @@
   }
   .ant-layout-content{
     margin-left:0;
-    padding-top:5px
+    /* padding-top:5px; */
+    margin-bottom:8vh;
   }
   /* .ant-layout-header{
     display:none
@@ -84,3 +85,11 @@
     display:none !important;
   }
 }
+
+.ml5 {
+  text-align: center;
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+}
+
