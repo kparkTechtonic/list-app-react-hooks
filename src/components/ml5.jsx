@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
+
 const classifier = window.ml5.imageClassifier('MobileNet');
 function Ml5() {
   const [result, setResult] = useState({ name: '', confidence: '' });
@@ -56,7 +57,7 @@ function Ml5() {
 
   return (
     <div className="ml5">
-      <h1>Image classification, try uploading an image!</h1>
+      <h1>Image classification, try uploading an image! animals and objects work best</h1>
       {!result.name ? 'loading...' : <input type="file" name="myImage" accept="image/*" onChange={imageHandle} />}
       <img src={img} style={{ width: 320, height: 240 }} alt="" />
       <h3>
