@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from 'react';
 
+// window.location.reload();
 
 const classifier = window.ml5.imageClassifier('MobileNet');
 function Ml5() {
   const [result, setResult] = useState({ name: '', confidence: '' });
   const [img, setImg] = useState(require('../assets/robin.png'));
+  console.log('loaded');
 
 
   useEffect(() => {
     // console.log(classifier)
     const image = new Image();
     image.src = img;
+    console.log('image processing ready');
     image.width = 320;
     image.height = 240;
     function gotResult(error, results) {
@@ -29,7 +32,7 @@ function Ml5() {
     setup();
   }, [img]);
 
-  const imageHandle = async () => {
+  const handleImageInput = async () => {
     const reader = new FileReader();
     const input = document.querySelector('input');
     // console.log(input.files[0]);
@@ -40,8 +43,9 @@ function Ml5() {
 
     reader.onload = async () => {
       if (reader.readyState < 1) {
-        console.log('returning');
-        console.log(reader);
+        console.log('reader ready');
+        // console.log('returning');
+        // console.log(reader);
         return;
       }
       const base64img = reader.result;
@@ -58,7 +62,7 @@ function Ml5() {
   return (
     <div className="ml5">
       <h1>Image classification, try uploading an image! animals and objects work best</h1>
-      {!result.name ? 'loading...' : <input type="file" name="myImage" accept="image/*" onChange={imageHandle} />}
+      {!result.name ? 'loading...' : <input type="file" name="myImage" accept="image/*" onChange={handleImageInput} />}
       <img src={img} style={{ width: 320, height: 240 }} alt="" />
       <h3>
 The result is:

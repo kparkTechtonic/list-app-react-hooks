@@ -4,34 +4,41 @@ import data from './assets/Data.json';
 import './Chart.css';
 
 const dateArr = Object.create(data.map(element => element.Date).splice(0));
-
 const priceArr = Object.create(data.map(element => element['Real Price']).splice(0));
+const cpi = Object.create(data.map(element => element['Consumer Price Index']).splice(0));
 
 function App() {
+  console.log(data);
   let dateRange = (Object.create(dateArr).splice(0));
-  let dataRange = (Object.create(priceArr).splice(0));
+  let dataRangeSNP = (Object.create(priceArr).splice(0));
+  let dataRangeCPI = (Object.create(cpi).splice(0));
 
 
   const changeDataRange = (targetName) => {
     if (targetName === '10 years') {
       dateRange = (Object.create(dateArr).splice(1645));
-      dataRange = (Object.create(priceArr).splice(1645));
+      dataRangeSNP = (Object.create(priceArr).splice(1645));
+      dataRangeCPI = (Object.create(cpi).splice(1645));
     }
     if (targetName === '40 years') {
       dateRange = (Object.create(dateArr).splice(1285));
-      dataRange = (Object.create(priceArr).splice(1285));
+      dataRangeSNP = (Object.create(priceArr).splice(1285));
+      dataRangeCPI = (Object.create(cpi).splice(1285));
     }
     if (targetName === '5 years') {
       dateRange = (Object.create(dateArr).splice(1706));
-      dataRange = (Object.create(priceArr).splice(1706));
+      dataRangeSNP = (Object.create(priceArr).splice(1706));
+      dataRangeCPI = (Object.create(cpi).splice(1706));
     }
     if (targetName === '1 year') {
       dateRange = (Object.create(dateArr).splice(1755));
-      dataRange = (Object.create(priceArr).splice(1755));
+      dataRangeSNP = (Object.create(priceArr).splice(1755));
+      dataRangeCPI = (Object.create(cpi).splice(1755));
     }
     if (targetName === 'full range') {
       dateRange = (Object.create(dateArr).splice(0));
-      dataRange = (Object.create(priceArr).splice(0));
+      dataRangeSNP = (Object.create(priceArr).splice(0));
+      dataRangeCPI = (Object.create(cpi).splice(0));
     }
   };
 
@@ -50,24 +57,45 @@ function App() {
         labels: dateRange,
         datasets: [{
           label: 'S&P real price',
-          data: dataRange,
+          yAxisID: 'S&P real price',
+          data: dataRangeSNP,
           backgroundColor: new Array(2000).fill('rgba(64, 224, 208, 1)'),
-          // [
-          //   'rgba(64, 224, 208, 1)',
-          // ],
           borderColor: new Array(2000).fill('rgba(64, 224, 208, 1)'),
-          // [
-          //   'rgba(64, 224, 208, 1)',
-          // ],
           borderWidth: 1,
+        },
+        {
+          label: 'CPI',
+          yAxisID: 'CPI',
+          data: dataRangeCPI,
+          backgroundColor: new Array(2000).fill('rgba(225,0,0,0.7)'),
+          borderColor: new Array(2000).fill('rgba(225,0,0,0.7)'),
+          borderWidth: 0.2,
+          type: 'line',
         }],
       },
       options: {
+        responsive: true,
+        maintainAspectRatio: false,
         scales: {
           yAxes: [{
-            ticks: {
+            id: 'S&P real price',
+            type: 'linear',
+            position: 'left',
+            scaleLabel: {
+              display: true,
+              labelString: 'S&P real price',
               beginAtZero: true,
             },
+          }, {
+            id: 'CPI',
+            type: 'linear',
+            position: 'right',
+            scaleLabel: {
+              display: true,
+              labelString: 'CPI',
+              beginAtZero: true,
+            },
+
           }],
         },
       },
@@ -76,6 +104,7 @@ function App() {
 
 
   useEffect(() => {
+    changeDataRange('10 years');
     const ctx = document.getElementById('myChart').getContext('2d');
     new Chart(ctx, {
       type: 'bar',
@@ -83,24 +112,43 @@ function App() {
         labels: dateRange,
         datasets: [{
           label: 'S&P real price',
-          data: dataRange,
+          yAxisID: 'S&P real price',
+          data: dataRangeSNP,
           backgroundColor: new Array(2000).fill('rgba(64, 224, 208, 1)'),
-          // [
-          //   'rgba(64, 224, 208, 1)',
-          // ],
           borderColor: new Array(2000).fill('rgba(64, 224, 208, 1)'),
-          // [
-          //   'rgba(64, 224, 208, 1)',
-          // ],
           borderWidth: 1,
+        },
+        {
+          label: 'CPI',
+          yAxisID: 'CPI',
+          data: dataRangeCPI,
+          backgroundColor: new Array(2000).fill('rgba(225,0,0,0.7)'),
+          borderColor: new Array(2000).fill('rgba(225,0,0,0.7)'),
+          borderWidth: 0.2,
+          type: 'line',
         }],
       },
       options: {
         scales: {
           yAxes: [{
-            ticks: {
+            id: 'S&P real price',
+            type: 'linear',
+            position: 'left',
+            scaleLabel: {
+              display: true,
+              labelString: 'S&P real price',
               beginAtZero: true,
             },
+          }, {
+            id: 'CPI',
+            type: 'linear',
+            position: 'right',
+            scaleLabel: {
+              display: true,
+              labelString: 'CPI',
+              beginAtZero: true,
+            },
+
           }],
         },
       },
@@ -120,7 +168,7 @@ function App() {
         <button name="full range" onClick={handleChart}>full range</button>
 
       </span>
-      <div className="App" style={{ width: '90%' }}>
+      <div className="App" style={{ height: '80vh' }}>
         <canvas id="myChart" width="100%" height="50%" />
       </div>
 

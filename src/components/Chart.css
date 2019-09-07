@@ -1,12 +1,19 @@
 #myChart{
   padding: 50px;
 }
-
-.chartjs-size-monitor{
-  width:10%
+#myChartv2{
+  padding: 50px;
 }
+
+/* .chartjs-size-monitor{
+  height:80vh;
+} */
+
 @media only screen and (max-width: 800px) {
-  #myChart{
+  /* #myChart{
     height:50vh !important;
-  }
+  } */
+  /* #myChartv2{
+    height: 40vh !important;
+  } */
 }
