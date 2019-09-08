@@ -5,11 +5,19 @@ import './projects.css';
 import axios from 'axios';
 import Context from '../Context';
 
-const Project = memo(() => {
+const Project = memo((props) => {
   const { state } = useContext(Context);
   const { projects } = state;
 
   useEffect(() => {
+    const script = document.createElement('script');
+    const script1 = document.createElement('script');
+    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.min.js';
+    script1.src = 'https://unpkg.com/ml5@0.3.1/dist/ml5.min.js';
+    script.async = true;
+    script1.async = true;
+    document.head.appendChild(script);
+    document.head.appendChild(script1);
     document.querySelector('#root > section > section > section > main').scrollTop = 0;
     axios.get('https://us-central1-chat-app-b8cf6.cloudfunctions.net/getAllCors').then(r => console.log('evoking cold start', r.data));
     axios.get('https://us-central1-chat-app-b8cf6.cloudfunctions.net/addColdStart').then(r => console.log('evoking cold start', r.data)).catch(err => console.log(err));
@@ -47,12 +55,12 @@ const Project = memo(() => {
           </div>
 
         </Card>
-        <a
+        <div
           key={obj.title + i}
-          href={(obj.title === 'Calculator') ? '/Calculator'
-            : (obj.title === 'Chart') ? '/Chart'
-              : (obj.title === 'ChartV2') ? '/ChartV2'
-                : (obj.title === 'MachineLearning') ? '/MachineLearning' : `/OldIFrames/${obj.title}`}
+          onClick={(obj.title === 'Calculator') ? () => { props.history.push('/Calculator'); }
+            : (obj.title === 'Chart') ? () => { props.history.push('/Chart'); }
+              : (obj.title === 'ChartV2') ? () => { props.history.push('/ChartV2'); }
+                : (obj.title === 'MachineLearning') ? () => { props.history.push('/MachineLearning'); } : () => { props.history.push(`/OldIFrames/${obj.title}`); }}
         >
           <div className="flip-card-back">
             <h1>{obj.title}</h1>
@@ -63,7 +71,7 @@ const Project = memo(() => {
             </p>
             <p>{obj.longDesc}</p>
           </div>
-        </a>
+        </div>
 
       </div>
     </div>

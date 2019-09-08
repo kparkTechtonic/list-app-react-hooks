@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Chart from 'chart.js';
 import './Chart.css';
-import axios from 'axios';
-import util from 'util';
-import fs from 'fs';
 
 const data = require('./gdpData').map((element) => {
   const setToCheck = new Set(['WLD', 'OED', 'HIC', 'PST', 'NAC', 'ECS', 'EUU', 'IBT', 'LMY', 'MIC', 'IBD', 'UMC', 'EAS', 'LTE', 'EAR', 'LCN', 'LMC', 'TLA', 'LAC', 'EAT', 'TEA', 'SAS', 'EAP', 'EMU', 'TSA', 'IDA', 'SSF', 'TSS', 'SSA', 'MEA', 'HPC', 'TEC', 'ARB', 'ECA']);
@@ -11,6 +8,7 @@ const data = require('./gdpData').map((element) => {
     element.Value /= 1000000000;
     return element;
   }
+  return setToCheck;
 }).filter(element => element !== undefined);
 
 
@@ -45,6 +43,7 @@ function ChartV2() {
     RUS: 'rgba(255,128,0,1)',
     KOR: 'rgba(126,68,56,1)',
   });
+
   let dataForYear = data.map((element) => {
     if (element.Year === year) {
       return element;

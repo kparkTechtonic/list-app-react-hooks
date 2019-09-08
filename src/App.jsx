@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 // import axios from 'axios';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import {
+  Route, Link,
+} from 'react-router-dom';
+import { withRouter } from 'react-router';
 import {
   Layout, Menu,
 } from 'antd';
@@ -20,7 +23,7 @@ import ChartV2 from './components/ChartV2';
 const { Header, Content } = Layout;
 const url = window.location.pathname;
 
-const App = () => {
+const App = (props) => {
   const [data] = useState('');
   const [formData, setFormData] = useState({});
   const [horizontalNav] = useState(
@@ -88,17 +91,18 @@ const App = () => {
 
   ]);
 
-  // useEffect(() => {
-  //   // async function fetchData() {
-  //   //   const response = await axios.get('http://localhost:3002/list/').then((r) => {
-  //   //     // console.log(r.data);
-  //   //     setData(r.data);
-  //   //     return r.data;
-  //   //   });
-  //   //   return response;
-  //   // }
-  //   // fetchData();
-  // }, []);
+  useEffect(() => {
+    // console.log(props);
+    // async function fetchData() {
+    //   const response = await axios.get('http://localhost:3002/list/').then((r) => {
+    //     // console.log(r.data);
+    //     setData(r.data);
+    //     return r.data;
+    //   });
+    //   return response;
+    // }
+    // fetchData();
+  }, []);
 
 
   return (
@@ -112,146 +116,51 @@ const App = () => {
         },
       }}
     >
-      <Router>
+      <Layout>
+        <Header className="header">
+          <div className="logo" />
+          <Menu
+            theme="dark"
+            mode="horizontal"
+            defaultSelectedKeys={[horizontalNav]}
+            style={{ lineHeight: '64px' }}
+          >
+
+            <Menu.Item key="1">
+              <Link to="/">Home</Link>
+            </Menu.Item>
+            <Menu.Item key="2">
+              <Link to="/project">Projects</Link>
+            </Menu.Item>
+            <Menu.Item key="3">
+              <Link to="/About">About me</Link>
+            </Menu.Item>
+          </Menu>
+        </Header>
         <Layout>
-          <Header className="header">
-            <div className="logo" />
-            <Menu
-              theme="dark"
-              mode="horizontal"
-              defaultSelectedKeys={[horizontalNav]}
-              style={{ lineHeight: '64px' }}
+
+          <Layout style={{ marginTop: '64px' }}>
+            <Content
+              style={{
+                minHeight: 280,
+              }}
             >
-
-              <Menu.Item key="1">
-                <Link to="/">Home</Link>
-              </Menu.Item>
-              <Menu.Item key="2">
-                <Link to="/project">Projects</Link>
-              </Menu.Item>
-              <Menu.Item key="3">
-                <Link to="/About">About me</Link>
-              </Menu.Item>
-            </Menu>
-          </Header>
-          <Layout>
-
-            <Layout style={{ marginTop: '64px' }}>
-              <Content
-                style={{
-                  minHeight: 280,
-                }}
-              >
-                <Route exact path="/" component={Home} />
-                <Route path="/display" component={Maindisplay} />
-                <Route path="/form" component={Form} />
-                <Route path="/Calculator" component={Calculator} />
-                <Route path="/MachineLearning" component={ml5} />
-                <Route exact path="/Chart" component={Chart} />
-                <Route exact path="/ChartV2" component={ChartV2} />
-                <Route path="/OldIFrames/:id" component={OldIFrames} />
-                <Route path="/project" component={Project} />
-                <Route path="/About" component={About} />
-              </Content>
-            </Layout>
+              <Route exact path="/" component={Home} />
+              <Route path="/display" component={Maindisplay} />
+              <Route path="/form" component={Form} />
+              <Route path="/Calculator" component={Calculator} />
+              <Route path="/MachineLearning" component={ml5} />
+              <Route exact path="/Chart" component={Chart} />
+              <Route exact path="/ChartV2" component={ChartV2} />
+              <Route path="/OldIFrames/:id" component={OldIFrames} />
+              <Route path="/project" component={Project} {...props} />
+              <Route path="/About" component={About} />
+            </Content>
           </Layout>
         </Layout>
-      </Router>
+      </Layout>
     </Context.Provider>
   );
 };
 
-export default App;
-
-// const populateNav = () => {
-// if (!data) {
-//    //return (<Menu.Item key="7">Loading...</Menu.Item>);
-//  }
-//  return data.map(item => (
-//    //<Menu.Item
-//      //key={item.time + item.title}
-//      //id={item.time}
-//    //>
-//      //<Link to={`/display/:${item._id}`}>
-//        //{item ? item.title : 'loading...'}
-//      //</Link>
-//    //</Menu.Item>
-//  ));
-// };
-
-// <SubMenu
-//  key="sub2"
-//  title={(
-//    <span>
-//      <Icon type="laptop" />
-// Current projects
-//    </span>
-// )}
-// >
-//  <Menu.Item key="6">
-//    <Link to="/form">
-//          New List
-//    </Link>
-//  </Menu.Item>
-//  {populateNav()}
-// </SubMenu>
-
-
-//    <Sider
-//              id="none"
-//              style={{ background: '#fff' }}
-//            //>
-//              <Menu
-//                //mode="inline"
-//                //defaultSelectedKeys={[verticalNav]}
-//                //style={{
-//                  height: '95vh',
-//                  borderRight: 0,
-//                  overflow: 'scroll',
-//                //}}
-//              >
-//                //<SubMenu
-//                  key="sub1"
-//                  title={(
-//                    //<span>
-//                      <Icon type="user" />
-//      Earlier projects
-
-//                    //</span>
-//                  )}
-//                //>
-//                  <Menu.Item key="1">
-//                    //<Link to="/OldIFrames/CarDealership">
-//                    //CarDealership
-//                    //</Link>
-//                  </Menu.Item>
-//                  <Menu.Item key="2">
-//                    //<Link to="/OldIFrames/TeslaWebsite">
-//                    //Tesla website
-//                    //</Link>
-//                  </Menu.Item>
-//                  <Menu.Item key="3">
-//                    //<Link to="/OldIFrames/Library">
-//                    //Library
-//                    //</Link>
-//                  </Menu.Item>
-//                  <Menu.Item key="4" onClick={updateHighlight}>
-//                    //<Link to="/Calculator">
-//                    //Calculator
-//                    //</Link>
-//                  </Menu.Item>
-//                  <Menu.Item key="5">
-//                    //<Link to="/OldIFrames/ChatApp">
-//                    //Chat App
-//                    //</Link>
-//                  </Menu.Item>
-//                  <Menu.Item key="6">
-//                    //<Link to="/Chart">
-//                    //Chart
-//                    //</Link>
-//                  </Menu.Item>
-//                //</SubMenu>
-
-
-//              </Menu>
-//            </Sider>
+export default withRouter(App);
