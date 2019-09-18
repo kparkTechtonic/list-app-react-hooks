@@ -145,7 +145,7 @@ const About = () => {
                 poster="video.jpg"
                 style={{ width: '100%', height: '100%' }}
               >
-                <source src="https://firebasestorage.googleapis.com/v0/b/first-js-project-c5a77.appspot.com/o/smallestmv.mp4?alt=media&token=1f65b325-ba62-4489-9059-e68bd5447398" type="video/mp4" />
+                <source src="https://firebasestorage.googleapis.com/v0/b/first-js-project-c5a77.appspot.com/o/720p10sec.mpeg-4.mp4?alt=media&token=8225736b-d6e8-4668-ae6c-7aabddfe3c3e" type="video/mp4" />
               </video>
 
             </div>

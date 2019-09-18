@@ -21,9 +21,8 @@ function Ml5() {
           }
         });
         window.ml5.imageClassifier('MobileNet').then((r) => {
-          classifier = r.model;
+          classifier = r;
           setReady(true);
-          console.log('ready');
         });
       }
     });
@@ -37,27 +36,18 @@ function Ml5() {
 
   const image = new Image();
   image.src = img;
-  console.log('image processing ready');
   image.width = 320;
   image.height = 240;
 
-  function gotResult(error, results) {
-    console.log('gotresults');
-    if (error) {
-      console.error(error);
-    } else {
-      console.log(results);
-      setResult({ name: results[0].label, confidence: (results[0].confidence * 100).toFixed(2) });
-    }
-  }
 
   function setup(imageinput) {
-    console.log('setup');
-    console.log(imageinput);
-    console.log(image);
     if (!imageinput) {
-      console.log('inside the conditional');
-      classifier.classify(image, gotResult).then(r => console.log(r));
+      classifier.classify(image).then((r) => {
+        const { label, confidence } = r[0];
+        if (result.name !== label || result.confidence !== (confidence * 100).toFixed(2)) {
+          setResult({ name: label, confidence: (confidence * 100).toFixed(2) });
+        }
+      });
     }
   }
 
@@ -68,16 +58,13 @@ function Ml5() {
     reader.readAsDataURL(input.files[0]);
 
     reader.onload = async () => {
-      console.log(reader.readyState);
       if (reader.readyState < 1) {
-        console.log('reader ready');
         return;
       }
       const base64img = reader.result;
       // await setImg('');
       await setImg(base64img);
       setResult({ name: '', confidence: '' });
-      console.log(img);
     };
   };
 
@@ -100,8 +87,6 @@ function Ml5() {
         {' '}
       </h3>
     </div>
-  // return (
-  //   <div />
   );
 }
 

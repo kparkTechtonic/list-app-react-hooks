@@ -8,7 +8,6 @@ const priceArr = Object.create(data.map(element => element['Real Price']).splice
 const cpi = Object.create(data.map(element => element['Consumer Price Index']).splice(0));
 
 function App() {
-  console.log(data);
   let dateRange = (Object.create(dateArr).splice(0));
   let dataRangeSNP = (Object.create(priceArr).splice(0));
   let dataRangeCPI = (Object.create(cpi).splice(0));
@@ -129,6 +128,8 @@ function App() {
         }],
       },
       options: {
+        responsive: true,
+        maintainAspectRatio: false,
         scales: {
           yAxes: [{
             id: 'S&P real price',
@@ -153,7 +154,7 @@ function App() {
         },
       },
     });
-  }, []);
+  }, [changeDataRange, dataRangeCPI, dataRangeSNP, dateRange]);
   return (
     <div className="container">
 
