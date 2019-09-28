@@ -18,7 +18,7 @@
   "scripts": {
     "start": "react-scripts start",
     "server-start": "(cd comment-board-hackathon-kparkTechtonic/cb-backend; npm start)",
-    "build": "react-scripts build",
+    "build": "GENERATE_SOURCEMAP=false react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

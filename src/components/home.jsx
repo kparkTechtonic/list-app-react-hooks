@@ -137,17 +137,7 @@ const About = () => {
                 zIndex: 1,
               }}
             >
-              <video
-                autoPlay
-                loop
-                muted
-                className="banner__video"
-                poster="video.jpg"
-                style={{ width: '100%', height: '100%' }}
-              >
-                <source src="https://firebasestorage.googleapis.com/v0/b/first-js-project-c5a77.appspot.com/o/720p10sec.mpeg-4.mp4?alt=media&token=8225736b-d6e8-4668-ae6c-7aabddfe3c3e" type="video/mp4" />
-              </video>
-
+              <img style={{ width: '100%', height: '100%' }} src={require('../assets/codeScroll.webp')} alt="code" />
             </div>
 
           </div>
@@ -232,3 +222,14 @@ export default About;
 // <img src={require('../assets/express.png')} alt="language icon" style={{ width: '10vw' }} />
 // <img src={require('../assets/gcp.jpg')} alt="language icon" style={{ width: '10vw' }} />
 // <img src={require('../assets/firebase.png')} alt="language icon" style={{ width: '10vw' }} /> */ }
+
+// {/* <video
+//   autoPlay
+//   loop
+//   muted
+//   className="banner__video"
+//   poster="video.jpg"
+//   style={{ width: '100%', height: '100%' }}
+// >
+//   <source src="https://firebasestorage.googleapis.com/v0/b/first-js-project-c5a77.appspot.com/o/720p10sec.mpeg-4.mp4?alt=media&token=8225736b-d6e8-4668-ae6c-7aabddfe3c3e" type="video/mp4" />
+// </video> */}
