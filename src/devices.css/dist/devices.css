@@ -28,8 +28,10 @@
 }
 
 .device-iphone-x {
-  height: 868px;
-  width: 428px;
+  /* height: 868px;
+  width: 428px; */
+  height: 700px;
+  width: 360px;
 }
 
 .device-iphone-x .device-frame {

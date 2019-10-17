@@ -129,6 +129,8 @@ function App() {
         }],
       },
       options: {
+        responsive: true,
+        maintainAspectRatio: false,
         scales: {
           yAxes: [{
             id: 'S&P real price',
@@ -153,7 +155,7 @@ function App() {
         },
       },
     });
-  }, []);
+  }, [changeDataRange, dataRangeCPI, dataRangeSNP, dateRange]);
   return (
     <div className="container">
 
