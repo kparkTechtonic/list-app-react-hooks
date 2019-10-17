@@ -3,7 +3,9 @@ import '../devices.css';
 import './ReactNativeFR.css';
 
 const ReactNativeFR = () => {
-  console.log('inside');
+  useEffect(() => {
+    // console.log('');
+  });
   return (
     <div className="ReactNativeFRContainer">
       <div

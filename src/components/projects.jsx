@@ -83,15 +83,40 @@ const Project = memo((props) => {
                           props.history.push(`/OldIFrames/${obj.title}`);
                         }
             }
-        >
-          <div className="flip-card-back">
-            <h1>{obj.title}</h1>
-            <p id="techUsed">
-Technologies and concepts:
-              {obj.technologies}
-            </p>
-            <p>{obj.longDesc}</p>
-          </div>
+        />
+
+        <div className="flip-card-back"
+        onClick={
+              obj.title === 'Calculator'
+                ? () => {
+                  props.history.push('/Calculator');
+                }
+                : obj.title === 'Chart'
+                  ? () => {
+                    props.history.push('/Chart');
+                  }
+                  : obj.title === 'ChartV2'
+                    ? () => {
+                      props.history.push('/ChartV2');
+                    }
+                    : obj.title === 'MachineLearning'
+                      ? () => {
+                        props.history.push('/MachineLearning');
+                      }
+                      : obj.title === 'ReactNativeFR'
+                        ? () => {
+                          props.history.push('/ReactNativeFR');
+                        }
+                        : () => {
+                          props.history.push(`/OldIFrames/${obj.title}`);
+                        }
+            }>
+          <h1>{obj.title}</h1>
+          <p id="techUsed">
+              Technologies and concepts:
+            {obj.technologies}
+          </p>
+          <p>{obj.longDesc}</p>
         </div>
       </div>
     </div>

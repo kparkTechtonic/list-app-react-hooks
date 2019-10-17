@@ -16,7 +16,9 @@ import About from './components/about';
 import Home from './components/home';
 import ChartV2 from './components/ChartV2';
 import ReactNativeFR from './components/ReactNativeFR.jsx';
+import ReactGA from 'react-ga';
 
+ReactGA.initialize('UA-148880798-1');
 const { Header, Content } = Layout;
 const url = window.location.pathname;
 
@@ -122,17 +124,8 @@ const App = (props) => {
   ]);
 
   useEffect(() => {
-    // console.log(props);
-    // async function fetchData() {
-    //   const response = await axios.get('http://localhost:3002/list/').then((r) => {
-    //     // console.log(r.data);
-    //     setData(r.data);
-    //     return r.data;
-    //   });
-    //   return response;
-    // }
-    // fetchData();
-  }, []);
+    ReactGA.pageview(props.history.location.pathname);
+  });
 
   return (
     <Context.Provider

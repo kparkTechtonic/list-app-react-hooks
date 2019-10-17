@@ -127,7 +127,7 @@ function ChartV2() {
     if (year < 2016) {
       setTimeout(() => {
         setYear(year + 1);
-      }, [700]);
+      }, [200]);
     }
     dataForYear = data.map((element) => {
       if (element.Year === year) {
