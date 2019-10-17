@@ -25,31 +25,65 @@ const About = () => {
         setvidWidth('100%');
         setDownArrow('downArrow');
         setMarginLeft('8vw');
-      } else if (document.querySelector('#root > section > section > section > main').scrollTop <= 1000
-      && document.querySelector('#root > section > section > section > main').scrollTop > 1) {
+      } else if (
+        document.querySelector('#root > section > section > section > main').scrollTop <= 1000
+        && document.querySelector('#root > section > section > section > main').scrollTop > 1
+      ) {
         setvidWidth('100%');
         setOpacity(1);
         setDownArrow('downArrow');
         setThoughtClass('notThought');
         setMarginLeft('8vw');
-        setMarginTop(`${-5 + document.querySelector('#root > section > section > section > main').scrollTop / 100}rem`);
-        setHeight(`${130 - (document.querySelector('#root > section > section > section > main').scrollTop) / 13}vh`);
-        setWidth(`${document.getElementsByClassName('infscroll')[0].clientHeight * 1418 / 775 || 0}px`);
-        setHeadMarginTop(`${900 - (document.querySelector('#root > section > section > section > main').scrollTop) / 1.67}px`);
-      } else if (document.querySelector('#root > section > section > section > main').scrollTop > 1000) {
+        setMarginTop(
+          `${-5
+            + document.querySelector('#root > section > section > section > main').scrollTop
+              * 0.01}rem`,
+        );
+        setHeight(
+          `${130
+            - document.querySelector('#root > section > section > section > main').scrollTop / 13}vh`,
+        );
+        setWidth(
+          `${(document.getElementsByClassName('infscroll')[0].clientHeight * 1418) / 775 || 0}px`,
+        );
+        setHeadMarginTop(
+          `${900
+            - document.querySelector('#root > section > section > section > main').scrollTop     / 1.67}px`,
+        );
+      } else if (
+        document.querySelector('#root > section > section > section > main').scrollTop > 1000
+      ) {
         setDownArrow('notThought');
-        setOpacity(1 - (document.querySelector('#root > section > section > section > main').scrollTop - 1000) / 600);
-        setHeadMarginTop(`${300 - (document.querySelector('#root > section > section > section > main').scrollTop - 1000) * 1.2}px`);
-        setMarginTop(`${80 - (document.querySelector('#root > section > section > section > main').scrollTop - 1000) * 1.2}px`);
+        setOpacity(
+          1
+            - (document.querySelector('#root > section > section > section > main').scrollTop
+              - 1000)     / 600,
+        );
+        setHeadMarginTop(
+          `${300
+            - (document.querySelector('#root > section > section > section > main').scrollTop
+              - 1000)
+              * 1.2}px`,
+        );
+        setMarginTop(
+          `${80
+            - (document.querySelector('#root > section > section > section > main').scrollTop
+              - 1000)
+              * 1.2}px`,
+        );
       }
     }, 8);
   };
 
   useEffect(() => {
-    document.querySelector('#root > section > section > section > main').addEventListener('scroll', laptopScrollEvent);
+    document
+      .querySelector('#root > section > section > section > main')
+      .addEventListener('scroll', laptopScrollEvent);
     document.querySelector('#root > section > section > section > main').scrollTop = 5;
     return () => {
-      document.querySelector('#root > section > section > section > main').removeEventListener('scroll', laptopScrollEvent);
+      document
+        .querySelector('#root > section > section > section > main')
+        .removeEventListener('scroll', laptopScrollEvent);
     };
   }, []);
 
@@ -71,11 +105,10 @@ const About = () => {
         behavior: 'smooth',
       });
     }
-    console.log(document.querySelector('#root > section > section > section > main').scrollTop);
+    // console.log(document.querySelector('#root > section > section > section > main').scrollTop);
   };
 
   return (
-
     <div
       className="mainContent"
       style={{
@@ -85,16 +118,8 @@ const About = () => {
         height: '2600px',
       }}
     >
-
-      <span
-        className={downArrow}
-        onClick={scrollDown}
-      >
-        <p>
-          {/* Scroll */}
-
-        </p>
-
+      <span className={downArrow} onClick={scrollDown}>
+        <p>{/* Scroll */}</p>
       </span>
 
       <div
@@ -106,7 +131,6 @@ const About = () => {
           pointerEvents: 'none',
           zIndex: 0,
           marginTop,
-          marginRight: '-15rem',
           opacity,
         }}
       >
@@ -130,6 +154,7 @@ const About = () => {
             <div
               className="infscroll"
               style={{
+                width: '100%',
                 backgroundSize: 'cover',
                 position: 'sticky',
                 top: 0,
@@ -143,13 +168,14 @@ const About = () => {
                 muted
                 className="banner__video"
                 poster="video.jpg"
-                style={{ width: vidWidth }}
+                style={{ width: '100%', height: '100%' }}
               >
-                <source src="https://firebasestorage.googleapis.com/v0/b/first-js-project-c5a77.appspot.com/o/landingMov.mp4?alt=media&token=e140ed1b-f9b2-4d7e-b3e9-64d98aa3a28e" type="video/mp4" />
+                <source
+                  src="https://firebasestorage.googleapis.com/v0/b/first-js-project-c5a77.appspot.com/o/720p10sec.mpeg-4.mp4?alt=media&token=8225736b-d6e8-4668-ae6c-7aabddfe3c3e"
+                  type="video/mp4"
+                />
               </video>
-
             </div>
-
           </div>
         </div>
         <div style={{ width: '100%', position: 'relative', zIndex: 4 }}>
@@ -172,10 +198,11 @@ const About = () => {
           fontsize: 'large',
         }}
       >
+        {vidWidth}
         This is me,
         <br />
         {' '}
-        coding!
+coding!
       </p>
       <img
         src={head}
@@ -205,9 +232,13 @@ const About = () => {
         <p>Hungry to learn, ready to contribute, ready to join a team, </p>
 
         <p>Experience using: </p>
-        <span style={{
-          display: 'flex', alignItems: 'center', width: '100%', justifyContent: 'center',
-        }}
+        <span
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            width: '100%',
+            justifyContent: 'center',
+          }}
         >
           <img src={require('../assets/all.png')} alt="language icon" style={{ width: '80vw' }} />
         </span>
@@ -218,8 +249,7 @@ const About = () => {
 
 export default About;
 
-
-// <img src={require('../assets/html.png')} alt="language icon" style={{ width: '7vw', marginRight: '-1rem' }} />
+// { /* <img src={require('../assets/html.png')} alt="language icon" style={{ width: '7vw', marginRight: '-1rem' }} />
 // <img src={require('../assets/css.png')} alt="language icon" style={{ width: '11vw' }} />
 // <img src={require('../assets/es6.svg')} alt="language icon" style={{ width: '5.2vw', marginRight: '3rem' }} />
 // <img src={require('../assets/node.png')} alt="language icon" style={{ width: '7vw' }} />
@@ -228,4 +258,12 @@ export default About;
 // <img src={require('../assets/python.jpg')} alt="language icon" style={{ width: '7vw' }} />
 // <img src={require('../assets/express.png')} alt="language icon" style={{ width: '10vw' }} />
 // <img src={require('../assets/gcp.jpg')} alt="language icon" style={{ width: '10vw' }} />
-// <img src={require('../assets/firebase.png')} alt="language icon" style={{ width: '10vw' }} />
+// <img src={require('../assets/firebase.png')} alt="language icon" style={{ width: '10vw' }} /> */ }
+
+{
+  /* <img
+                style={{ width: '100%', height: '100%' }}
+                src={require('../assets/codeScroll.webp')}
+                alt="code"
+              /> */
+}

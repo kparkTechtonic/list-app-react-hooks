@@ -1,10 +1,11 @@
-.ant-layout{
-  position:fixed;
+.ant-layout {
+  position: fixed;
 }
 
 .downArrow {
-  margin-left: -10vw; 
-  font-size: 2rem; 
+  cursor: pointer;
+  margin-left: -10vw;
+  font-size: 2rem;
   position: absolute;
   z-index: 15;
   top: 80%;
@@ -20,7 +21,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  content: '';
+  content: "";
   width: 16px;
   height: 16px;
   margin: -12px 0 0 -8px;
@@ -31,52 +32,51 @@
   box-sizing: border-box;
 }
 
-.mainContent{
+.mainContent {
   height: 85vh;
-  width:85vw;
+  width: 85vw;
   position: static;
-  display:flex;
-  flex-direction:column;
+  display: flex;
+  flex-direction: column;
   justify-content: flex-start;
   align-items: center;
 }
 
-.infscroll{
+.infscroll {
   /* background-image:url('../scroll-bgimage.jpg'); */
   /* background-size: 100%; */
   background-repeat: no-repeat;
   padding: 5px;
   /* height: 100%; */
   /* width: 100%; */
-  overflow:hidden;
+  overflow: hidden;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
   /* z-index: 1; */
 }
 
-
-.stuck{
-  position:sticky;  
+.stuck {
+  position: sticky;
 }
 
-#underneath{
-  margin-top:-80vh;
-  position:relative;
-  font-size:3vw;
+#underneath {
+  margin-top: -80vh;
+  position: relative;
+  font-size: 3vw;
   z-index: 10;
-  display:flex;
-  flex-direction:column;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.ant-layout-sider{
+.ant-layout-sider {
   z-index: 10;
 }
 
-.device-macbook-pro.device-spacegray .device-power::before{
-  width:100%;
+.device-macbook-pro.device-spacegray .device-power::before {
+  width: 100%;
 }
 
 /* @media screen only and (max-width: ) {
@@ -84,72 +84,71 @@
 
   }
 } */
-.device-macbook-pro .device-frame::after{
-  width:99%;
+.device-macbook-pro .device-frame::after {
+  width: 99%;
 }
 
-.notThought{
-  display:none
+.notThought {
+  display: none;
 }
 
 p.thought {
-  position:relative; /*see the support section below for more info*/
-  width:180px; /*size of the bubble*/
-  padding:20px 40px;
-  margin:10px 10px 80px 40px;
+  position: relative; /*see the support section below for more info*/
+  width: 180px; /*size of the bubble*/
+  padding: 20px 40px;
+  margin: 10px 10px 80px 40px;
   /**give the bubble's background a gradient**/
-  background:#dedbd8; /*fallback colour for non-supporting browsers*/
-  background:-webkit-gradient(linear, 0 0, 0 100%, from(#e6e6e6), to(#878787));
-  background:-moz-linear-gradient(#e6e6e6, #878787);
-  background:-o-linear-gradient(#e6e6e6, #878787);
-  background:linear-gradient(#e6e6e6, #878787);
+  background: #dedbd8; /*fallback colour for non-supporting browsers*/
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#e6e6e6), to(#878787));
+  background: -moz-linear-gradient(#e6e6e6, #878787);
+  background: -o-linear-gradient(#e6e6e6, #878787);
+  background: linear-gradient(#e6e6e6, #878787);
   /**give the corners a large curve**/
-  -webkit-border-radius:180px;
-  -moz-border-radius:180px;
-  border-radius:180px;
+  -webkit-border-radius: 180px;
+  -moz-border-radius: 180px;
+  border-radius: 180px;
   /**add a drop shadow to the bubble**/
   -webkit-box-shadow: -3px 4px 8px #989898;
   -moz-box-shadow: -3px 4px 8px #989898;
   box-shadow: -3px 4px 8px #989898;
   /**style the text**/
-  color:#575544;
-  font-size:1em;
-  letter-spacing:.06em;
-  }
-  /******NOW CREATE THE THOUGHT CIRCLES*****/
-  /****FIRST THE LARGE CIRCLE***/
-  p.thought:before {
-  content:"";
-  position:absolute; /*see the support section below for more info*/
-  bottom:-40px; /*distance from the bottom of the bubble*/
-  left:20px; /*distance from the left edge of the bubble*/
-  background:#878787;
-  width:30px; /*same as the height*/
-  height:30px; /*same as the width*/
+  color: #575544;
+  font-size: 1em;
+  letter-spacing: 0.06em;
+}
+/******NOW CREATE THE THOUGHT CIRCLES*****/
+/****FIRST THE LARGE CIRCLE***/
+p.thought:before {
+  content: "";
+  position: absolute; /*see the support section below for more info*/
+  bottom: -40px; /*distance from the bottom of the bubble*/
+  left: 20px; /*distance from the left edge of the bubble*/
+  background: #878787;
+  width: 30px; /*same as the height*/
+  height: 30px; /*same as the width*/
   /*add a curve to the corners the same size as the height and width*/
-  -webkit-border-radius:30px;
-  -moz-border-radius:30px;
-  border-radius:30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
   /*add a drop shadow*/
   -webkit-box-shadow: -3px 3px 4px #989898;
   -moz-box-shadow: -3px 3px 4px #989898;
   box-shadow: -3px 3px 8px #989898;
-  }
-  /*****NOW THE SMALL CIRCLE***/
-  /**Created exactly the same way as the large circle, except with smaller width, height and border-radius**/
-  p.thought:after {
-  content:"";
-  position:absolute;
-  bottom:-55px;
-  left:0;
-  width:15px;
-  height:15px;
-  background:#878787;
-  -webkit-border-radius:15px;
-  -moz-border-radius:15px;
-  border-radius:15px;
+}
+/*****NOW THE SMALL CIRCLE***/
+/**Created exactly the same way as the large circle, except with smaller width, height and border-radius**/
+p.thought:after {
+  content: "";
+  position: absolute;
+  bottom: -55px;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  background: #878787;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
   -webkit-box-shadow: -3px 3px 4px #989898;
   -moz-box-shadow: -3px 3px 4px #989898;
   box-shadow: -3px 3px 8px #989898;
-  }
-
+}

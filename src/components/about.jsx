@@ -16,11 +16,14 @@ const About = () => {
       <Title>About me</Title>
 
       <Paragraph className="paragraph">
-      After launching an unsatisfying career in academic science, I made the move to web development.
+      After launching an unsatisfying career in academic science [
+        <a href="https://pubs.acs.org/doi/10.1021/acs.jpcc.8b10797" target="_blank" rel="noopener noreferrer">link to paper</a>
+      ], I made the move towards programming.
+
 
       </Paragraph>
       <Paragraph className="paragraph">
-I had started to teach myself data science, using
+I had started to discover data science and machine learning, using
         {' '}
         <Text code>Python</Text>
         {' '}
@@ -34,19 +37,27 @@ with libraries like
 ,
         {' '}
         <Text code>SciKit Learn</Text>
-,
+        ,
         {' '}
         <Text code>Pandas</Text>
+        {' '}
+,
+        {' '}
+        <Text code>Tensorflow</Text>
+        {' '}
+,
+        {' '}
+        <Text code>Keras</Text>
         {' '}
 and
         {' '}
         <Text code>MatPlotLib</Text>
       </Paragraph>
       <Paragraph className="paragraph">
-      I've been very fortunate to be selected to study web development as an apprentice at Techtonic LLC.
+      But in early 2019, I was very fortunate to be selected to be paid to study web development as an apprentice.
         {' '}
         <br />
-Through the guidance of their awesome instructional team, I had the opportunity to learn
+Since then, I've had the opportunity to learn
         {' '}
         <Text code>HTML</Text>
 ,
@@ -59,7 +70,7 @@ and
  in great detail.
         {' '}
         <br />
-We explored both
+I've explored both
         {' '}
         <Text code>Object Oriented Programming</Text>
         {' '}
@@ -91,15 +102,14 @@ as the language,
         and
         <Text code>Firestore</Text>
         {' '}
-as the database and with frameworks like
+as the database and with frameworks and offerings like
         {' '}
         <Text code>Express</Text>
+,
+        <Text code>Mongoose</Text>
+and
         <Text code>Google Serverless Functions</Text>
 
-        {' '}
-and
-        {' '}
-        <Text code>Mongoose</Text>
 .
       </Paragraph>
       <Paragraph />
@@ -139,6 +149,10 @@ to be consumed with the
         {' '}
         <Text code>API</Text>
 .
+        <br />
+The animation on the landing page was made with
+        {' '}
+        <Text code>vanilla js</Text>
       </Paragraph>
       <Title level={2}>How to find me</Title>
       <Paragraph className="paragraph">

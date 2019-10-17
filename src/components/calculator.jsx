@@ -221,10 +221,10 @@ class Calculator extends PureComponent {
 
   render() {
     return (
-      <>
+      <div style={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center",paddingTop:"30px"}}>
         <Display pressHistory = {this.state.pressHistory} currentDisplay = {this.state.currentDisplay}/>
         <Buttons buttons = {this.state.buttons} handlePress = {this.handlePress}/>
-      </>
+      </div>
     );
 }
 }

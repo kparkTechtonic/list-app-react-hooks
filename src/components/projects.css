@@ -1,6 +1,6 @@
 .projectContainer{
   display:inline-block;
-
+  height:auto;  
 }
 
 .ant-card-cover{
@@ -16,4 +16,12 @@
 .ant-card-bordered{
   margin:0px;
 
+}
+
+@media only screen and (max-width: 800px) {
+  .projectContainer{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
 }

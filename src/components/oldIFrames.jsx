@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './oldIFrames.css';
+import '../devices.css';
+
 
 const OldIFrames = ({ match }) => {
   const [width, setWidth] = useState('100%');
@@ -44,6 +46,28 @@ const OldIFrames = ({ match }) => {
         <iframe className="shared" title="ChatApp1" id="chatApp1" src="https://chat-app-b8cf6.firebaseapp.com/" frameBorder="0" />
         <iframe className="shared" title="ChatApp2" id="chatApp2" src="https://chat-app-b8cf6.firebaseapp.com/" frameBorder="0" />
       </>
+    );
+  }
+
+  if (match.params.id === 'StorageShare') {
+    return (
+      <div style={{
+        display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', margin: 0,
+      }}
+      >
+        <div className="device device-iphone-x">
+          <div style={{ maxHeight: '700px', maxWidth: '360px' }} className="device-frame">
+            <iframe style={{ borderRadius: '2rem', maxHeight: '700px', maxWidth: '360px' }} title="storageShare" src="https://sub-ducks-storage-share.firebaseapp.com/" frameBorder="0" />
+            {' '}
+
+          </div>
+          <div className="device-stripe" />
+          <div className="device-header" />
+          <div className="device-sensors" />
+          <div className="device-btns" />
+          <div className="device-power" />
+        </div>
+      </div>
     );
   }
 
