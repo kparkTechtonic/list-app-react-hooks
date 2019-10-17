@@ -251,19 +251,6 @@ coding!
 
 export default About;
 
-<<<<<<< HEAD
-
-{ /* <img src={require('../assets/html.png')} alt="language icon" style={{ width: '7vw', marginRight: '-1rem' }} />
-<img src={require('../assets/css.png')} alt="language icon" style={{ width: '11vw' }} />
-<img src={require('../assets/es6.svg')} alt="language icon" style={{ width: '5.2vw', marginRight: '3rem' }} />
-<img src={require('../assets/node.png')} alt="language icon" style={{ width: '7vw' }} />
-<img src={require('../assets/mongodb.png')} alt="language icon" style={{ width: '7vw' }} />
-<img src={require('../assets/react.png')} alt="language icon" style={{ width: '7vw' }} />
-<img src={require('../assets/python.jpg')} alt="language icon" style={{ width: '7vw' }} />
-<img src={require('../assets/express.png')} alt="language icon" style={{ width: '10vw' }} />
-<img src={require('../assets/gcp.jpg')} alt="language icon" style={{ width: '10vw' }} />
-<img src={require('../assets/firebase.png')} alt="language icon" style={{ width: '10vw' }} /> */ }
-=======
 // { /* <img src={require('../assets/html.png')} alt="language icon" style={{ width: '7vw', marginRight: '-1rem' }} />
 // <img src={require('../assets/css.png')} alt="language icon" style={{ width: '11vw' }} />
 // <img src={require('../assets/es6.svg')} alt="language icon" style={{ width: '5.2vw', marginRight: '3rem' }} />
@@ -282,4 +269,3 @@ export default About;
                 alt="code"
               /> */
 }
->>>>>>> 4c3f7344f6827e60b89f57a3a08b668b222b28f4

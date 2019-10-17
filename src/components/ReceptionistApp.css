@@ -1,0 +1,16 @@
+.ReceptionistAppContainer {
+  margin-top:50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+@media only screen and (max-width: 800px) {
+  .ReactNativeFRContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+}

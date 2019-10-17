@@ -1,39 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import load from 'load-script';
 
-<<<<<<< HEAD
-// window.location.reload();
-
-const classifier = window.ml5.imageClassifier('MobileNet');
-=======
 
 let classifier;
->>>>>>> 4c3f7344f6827e60b89f57a3a08b668b222b28f4
 function Ml5() {
   const [result, setResult] = useState({ name: 'robin, American robin, Turdus migratorius', confidence: '99.99' });
   const [img, setImg] = useState(require('../assets/robin.png'));
-<<<<<<< HEAD
-  console.log('loaded');
-
-
-  useEffect(() => {
-    // console.log(classifier)
-    const image = new Image();
-    image.src = img;
-    console.log('image processing ready');
-    image.width = 320;
-    image.height = 240;
-    function gotResult(error, results) {
-      if (error) {
-        console.error(error);
-=======
   const [ready, setReady] = useState(!!(window.ml5 && classifier));
 
   if (!window.ml5) {
     load('https://unpkg.com/ml5@0.3.1/dist/ml5.min.js', (err, script) => {
       if (err) {
         // print useful message
->>>>>>> 4c3f7344f6827e60b89f57a3a08b668b222b28f4
       } else {
         load('https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.min.js', (err, script) => {
           if (err) {
