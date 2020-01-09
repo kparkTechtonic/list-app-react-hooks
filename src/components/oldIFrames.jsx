@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import ReactEmbedGist from 'react-embed-gist';
 import './oldIFrames.css';
 import '../devices.css';
 
@@ -23,6 +24,16 @@ const OldIFrames = ({ match }) => {
   if (match.params.id === 'CarDealership') {
     return (
       <iframe title="CarDealership" src="https://carconsoleapp.web.app/?dealershipName=asdf&startingFunds=123123123" frameBorder="0" />);
+  }
+  if (match.params.id === 'NLPKaggle') {
+    return (
+      <ReactEmbedGist gist="kparkTechtonic/e9cabdc2209b73674cf1cbbe7dc60923"/>
+
+      );
+  }
+  if (match.params.id === 'SortingAngularD3') {
+    return (
+      <iframe title="SortingAngularD3" src="https://d3js-angular-sort.firebaseapp.com/" frameBorder="0" />);
   }
   if (match.params.id === 'TeslaWebsite') {
     return (

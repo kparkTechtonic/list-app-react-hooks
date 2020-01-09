@@ -17,9 +17,10 @@ import Home from './components/home';
 import ChartV2 from './components/ChartV2';
 import ReactNativeFR from './components/ReactNativeFR.jsx';
 import ReceptionistApp from './components/ReceptionistApp.jsx';
+// import StadiaRecreation from './components/StadiaRecreation.jsx';
 import ReactGA from 'react-ga';
 
-ReactGA.initialize('UA-148880798-1');
+ReactGA.initialize('UA-154594281-1');
 const { Header, Content } = Layout;
 const url = window.location.pathname;
 
@@ -53,9 +54,27 @@ const App = (props) => {
                             ? '2'
                             : url === '/ReceptionistApp'
                             ? '2'
-                            : '',
+                            : url === '/OldIFrames/NLPKaggle'
+                            ? '2'
+                              : url === '/OldIFrames/SortingAngularD3'
+                              ? '2'
+                                : '',
   );
   const [projects] = useState([
+    {
+      title: 'NLPKaggle',
+      description: ' NLP sentiment analsis on cellphone reviews.',
+      longDesc:
+        ' Using machine learning Natural language toolkit, sentiment analysis with naive bayesian statistics on reviews on amazon for cell phones .',
+      technologies: ' Python, Numpy, Pandas, Matplotlib, Seaborn, NLTK, sklearn',
+    },
+    {
+      title: 'SortingAngularD3',
+      description: ' Angular, Sorting algorithms, D3',
+      longDesc:
+        'Using Angular and d3, sorting was visualized.',
+      technologies: 'Angular D3.js',
+    },
     {
       title: 'ReceptionistApp',
       description: ' React Native receptionist app',
@@ -185,6 +204,7 @@ const App = (props) => {
               <Route path="/OldIFrames/:id" component={OldIFrames} />
               <Route path="/ReactNativeFR" component={ReactNativeFR} />
               <Route path="/ReceptionistApp" component={ReceptionistApp} />
+              {/* <Route path="/StadiaRecreation" component={StadiaRecreation} /> */}
               <Route path="/project" component={Project} {...props} />
               <Route path="/About" component={About} />
             </Content>

@@ -19,7 +19,7 @@ const ReceptionistApp = () => {
       >
         <div className="device device-surface-book">
           <div style={{ height: '600px', width: '1000px',display:"flex",alignItems:"center",justifyContent:"center" }} className="device-frame">
-          <div style={{ height: '550px', width: '950px',display:"flex",alignItems:"center",justifyContent:"center", backgroundColor:"grey" }}>
+          <div style={{ height: '550px', width: '950px',display:"flex",alignItems:"center",justifyContent:"center", backgroundColor:"	rgb(32,32,32)" }}>
           <video
                 autoPlay
                 loop
