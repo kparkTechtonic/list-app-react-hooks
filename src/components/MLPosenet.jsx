@@ -35,7 +35,7 @@ function Ml5() {
                 const {keypoints} = e.pose
                 const partsList = {}
                 const todisplay = keypoints.map((e)=>{
-                  if(e.score>.1) {
+                  if(e.score>.0005) {
                     return e}
                 }).filter(e=>!!e)
 
@@ -194,7 +194,7 @@ function Ml5() {
                       const {keypoints} = e.pose
                       const partsList = {}
                       const todisplay = keypoints.map((e)=>{
-                        if(e.score>.1) {
+                        if(e.score>.0005) {
                           return e}
                       }).filter(e=>!!e)
   
