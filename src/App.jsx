@@ -66,10 +66,10 @@ const App = (props) => {
   const [projects] = useState([
     {
       title: 'MLPosenet',
-      description: ' Using posenet to understand human movements',
+      description: ' Using posenet, tensorflow and the ML5 library',
       longDesc:
-        " using posenet, not sure what I'll do something fun .",
-      technologies: ' tensorflow posenet.',
+        " using posenet, could be extended to do apply to something cool like analyzing gait, posture, squats, etc.",
+      technologies: ' ml5 tensorflow posenet.',
     },
     {
       title: 'NLPKaggle',
