@@ -8,6 +8,7 @@ import './App.css';
 import Maindisplay from './components/Maindisplay';
 import Form from './components/Form';
 import Calculator from './components/calculator';
+import MLPosenet from './components/MLPosenet';
 import ml5 from './components/ml5.jsx';
 import Chart from './components/Chart';
 import OldIFrames from './components/oldIFrames';
@@ -42,6 +43,8 @@ const App = (props) => {
                 ? '2'
                 : url === '/Calculator'
                   ? '2'
+                  : url === '/MLPosenet'
+                  ? '2'
                   : url === '/MachineLearning'
                     ? '2'
                     : url === '/Chart'
@@ -61,6 +64,13 @@ const App = (props) => {
                                 : '',
   );
   const [projects] = useState([
+    {
+      title: 'MLPosenet',
+      description: ' Using posenet to understand human movements',
+      longDesc:
+        " using posenet, not sure what I'll do something fun .",
+      technologies: ' tensorflow posenet.',
+    },
     {
       title: 'NLPKaggle',
       description: ' NLP sentiment analsis on cellphone reviews.',
@@ -198,6 +208,7 @@ const App = (props) => {
               <Route path="/display" component={Maindisplay} />
               <Route path="/form" component={Form} />
               <Route path="/Calculator" component={Calculator} />
+              <Route path="/MLPosenet" component={MLPosenet} />
               <Route path="/MachineLearning" component={ml5} />
               <Route exact path="/Chart" component={Chart} />
               <Route exact path="/ChartV2" component={ChartV2} />

@@ -62,6 +62,10 @@ const Project = memo((props) => {
                 ? () => {
                   props.history.push('/Calculator');
                 }
+                : obj.title === 'MLPosenet'
+                  ? () => {
+                    props.history.push('/MLPosenet');
+                  }
                 : obj.title === 'Chart'
                   ? () => {
                     props.history.push('/Chart');
@@ -94,6 +98,10 @@ const Project = memo((props) => {
                 ? () => {
                   props.history.push('/Calculator');
                 }
+                : obj.title === 'MLPosenet'
+                  ? () => {
+                    props.history.push('/MLPosenet');
+                  }
                 : obj.title === 'Chart'
                   ? () => {
                     props.history.push('/Chart');

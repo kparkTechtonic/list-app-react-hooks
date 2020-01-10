@@ -11,6 +11,7 @@ function Ml5() {
   if (!window.ml5) {
     load('https://unpkg.com/ml5@0.3.1/dist/ml5.min.js', (err, script) => {
       if (err) {
+        console.log(err)
         // print useful message
       } else {
         load('https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.min.js', (err, script) => {
@@ -20,10 +21,11 @@ function Ml5() {
             // console.log(script.src);// Prints 'foo'.js'
           }
         });
-        window.ml5.imageClassifier('MobileNet').then((r) => {
-          classifier = r;
-          setReady(true);
-        });
+        if(window.ml5){  
+          window.ml5.imageClassifier('MobileNet').then((r) => {
+            classifier = r;
+            setReady(true);
+          });}
       }
     });
   }
