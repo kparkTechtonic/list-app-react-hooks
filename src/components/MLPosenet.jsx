@@ -8,11 +8,13 @@ function Ml5() {
   var canvas
   
   useEffect(() => {
+    var localstream;
     video = document.getElementById('player');
     canvas = document.getElementById("canvas")
     console.log(video)
     navigator.mediaDevices.getUserMedia({video:true})
     .then((stream) => {
+      localstream = stream
       video.srcObject = stream;
       setTimeout(()=>{
         if(window.ml5){  
@@ -329,7 +331,10 @@ function Ml5() {
       },2000)
 
     })
-    
+    return ()=>{
+      localstream.getTracks()[0].stop()
+    }
+
   })
 
 
