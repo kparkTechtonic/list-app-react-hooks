@@ -8,7 +8,7 @@
     "@tensorflow/tfjs-core": "^1.5.1",
     "antd": "^3.26.6",
     "axios": "^0.19.1",
-    "chart.js": "^2.9.3",
+    "chart.js": "^2.9.4",
     "live-server": "^1.2.1",
     "load-script": "^1.0.0",
     "prop-types": "^15.7.2",
